@@ -6,21 +6,59 @@ body, * {
 .carousel-item > img {
     height: 100vh;
     object-fit: cover;
-    opacity: 90%;
+  
+}
+
+.carousel-caption > h1{
+    font-size: 4rem;
+}
+.carousel-caption > p{
+    font-size: 1.5rem;
 }
 
 .carousel-caption {
+    top: 40%;
+}
+
+.c2{
     top: 50%;
 }
 
+.c3{
+    top: 30%;
+}
+
+/* mobile devices */
+
 @media screen and (max-width: 470px) {
     .carousel-caption {
-        top: 40%;
+        top: 35%;
+    }
+    .carousel-caption > h1{
+        font-size: 3rem;
+    }
+
+    .carousel-caption > p{
+        font-size: 1rem;
     }
     .c2 {
         top: 45%;
     }
     .c3{
         top: 30%;
+    }
+}
+
+/* SE and smaller */
+
+@media screen and (max-width: 330px) {
+    .carousel-caption {
+        top: 20%;
+    }
+    .c2 {
+        top: 30%;
+    }
+    .c3{
+        top: 25%;
     }
 }
