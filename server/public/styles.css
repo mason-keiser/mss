@@ -1,5 +1,26 @@
+body, * {
+    font-family: 'Oswald', 'sans-serif';
+    font-weight: 500;
+}
 
 .carousel-item > img {
     height: 100vh;
     object-fit: cover;
+    opacity: 90%;
+}
+
+.carousel-caption {
+    top: 50%;
+}
+
+@media screen and (max-width: 470px) {
+    .carousel-caption {
+        top: 40%;
+    }
+    .c2 {
+        top: 45%;
+    }
+    .c3{
+        top: 30%;
+    }
 }

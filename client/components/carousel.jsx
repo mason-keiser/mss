@@ -10,9 +10,9 @@ const HomeCarousel = () => {
                 src="/images/h1.jpg"
                 alt="First slide"
                 />
-                <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <Carousel.Caption className='c1'>
+                <h1>Find all of your surf needs here</h1>
+                <p>We have a wide selection of wetsuits and surf equipment</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -22,9 +22,8 @@ const HomeCarousel = () => {
                 alt="Second slide"
                 />
 
-            <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <Carousel.Caption className='c2'>
+            <h1>We support ocean safe products</h1>
             </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -34,9 +33,9 @@ const HomeCarousel = () => {
                 alt="Third slide"
                 />
 
-                <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                <Carousel.Caption className='c3'>
+                <h1>Mas’s Surf Shop supports OneReef</h1>
+                <p>A portion of the proceeds from each purchase will go towards rebuilding and preserving reefs around the world</p>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
