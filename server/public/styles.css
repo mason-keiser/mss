@@ -33,7 +33,7 @@ body, * {
 
 .navbarCont {
     height: 17vh;
-    box-shadow: 0 8px 6px -6px black
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
 }
 
 .logoIcon {
@@ -42,6 +42,7 @@ body, * {
     align-items: center;
     justify-content: center;
     padding: 10px 0px 0px 0px;
+    cursor: pointer;
 }
 
 .logoIcon > h2 {
@@ -64,9 +65,8 @@ body, * {
 .searchInput > input {
     width: 20vw;
     height: 40px;
-    border: 1px solid black;
+    border: none;
     border-radius: 0;
-    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
 }
 
 input[type=text]:focus{
@@ -83,14 +83,11 @@ input[type=text]:focus{
     height: 40px;
     width: 40px;
     background: red;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .inputBtnCont{
@@ -98,11 +95,13 @@ input[type=text]:focus{
     flex: row;
     margin-top: .5rem;
     margin-right: 1rem;
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
 }
 
 .searchBtn > span {
     display: flex;
     align-items: center;
+
 }
 
 .cartCont {
@@ -110,6 +109,7 @@ input[type=text]:focus{
     flex-direction: row;
     align-items: center;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 .cartCont > span {
@@ -126,10 +126,11 @@ input[type=text]:focus{
     flex-direction: row;
     height: 40px;
     justify-content: space-evenly;
-    align-items: flex-end;
+   
 }
 
 .bottomRow > div {
+    margin-top: 1rem;
     font-size: 1.3rem;
     cursor: pointer;
 }
@@ -143,7 +144,7 @@ input[type=text]:focus{
 @media screen and (max-width: 470px) {
 
     .inputBtnCont{
-        margin-right: 1.5rem;
+        margin-right: 1.3rem;
     }
     .navbarCont {
         height: 15vh;
@@ -178,6 +179,9 @@ input[type=text]:focus{
     }
     .c3{
         top: 30%;
+    }
+    .bottomRow {
+        align-items: unset;
     }
 }
 

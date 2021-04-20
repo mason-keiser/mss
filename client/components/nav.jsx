@@ -1,11 +1,12 @@
 import React from 'react'
+import { animateScroll as scroll } from 'react-scroll';
 
 const Nav = (props) => {
 
     return (
-        <div className='navbarCont'>
+        <div className='navbarCont shadow-lg'>
             <div className='topRow'>
-                <div className='logoIcon'>
+                <div className='logoIcon' onClick={() => scroll.scrollToTop()}>
                     <img src='/images/icon.png'></img>
                     <h2>Mas's Surf Shop</h2>
                 </div>
