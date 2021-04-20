@@ -1,12 +1,34 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
 import HomeCarousel from './carousel';
 import Nav from './nav'
 
 
 const App = () => {
+    const [view, setView] = useState({ name: 'home', params: {}});
+    const [allProducts, setAllProducts] = useState();
 
-    const [view, setView] = useState({ name: 'home', params: {}})
+    useEffect(() => {
+        fetch('/api/getAllProducts', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json'}
+        }) 
+        .then(response => {
+            if (response.status === 400 || response.status === 404) {
+                return null
+            } else {
+                return response.json();
+            }
+            })
+            .then(result => {
+                if (!result) {
+                    return null
+                } else {
+                    setAllProducts(result)
+                }
+            })
+    }, [])
 
     const viewTern = (view.name === 'home')
         ? <HomeCarousel/>
