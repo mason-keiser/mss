@@ -20,7 +20,12 @@ body, * {
 }
 
 .c2{
-    top: 50%;
+    top: 70%;
+    left: 5%;
+}
+
+.carousel-caption.c2 {
+    left: -15%;
 }
 
 .c2 > h1{
@@ -143,6 +148,9 @@ input[type=text]:focus{
 /* mobile devices */
 
 @media screen and (max-width: 470px) {
+    .carousel-caption.c2 {
+        left: 15%
+    }
 
     .inputBtnCont{
         margin-right: 1.3rem;
