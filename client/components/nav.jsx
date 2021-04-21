@@ -25,10 +25,18 @@ const Nav = (props) => {
         setSearchWord(event.target.value)
     }
 
+    const homeNdClear = () => {
+        const bar = document.getElementById('searchBar');
+        bar.value = ''
+        bar.style.border = 'none'
+        bar.placeholder = 'Search here'
+        props.setView({ name: 'home', params: {}})
+    }
+
     return (
         <div className='navbarCont shadow-lg'>
             <div className='topRow'>
-                <div className='logoIcon' onClick={() =>  props.setView({ name: 'home', params: {}})}>
+                <div className='logoIcon' onClick={() =>  homeNdClear()}>
                     <img src='/images/icon.png'></img>
                     <h2>Mas's Surf Shop</h2>
                 </div>
@@ -48,7 +56,7 @@ const Nav = (props) => {
                 </div>
             </div>
             <div className='bottomRow'>
-                <div id='home' className='navItem' onClick={() => props.setView({ name: 'home', params: {}})}>Home</div>
+                <div id='home' className='navItem' onClick={() => homeNdClear()}>Home</div>
                 <div id='surf' className='navItem' onClick={() => props.setView({ name: 'surf', params: {}})}>Surf</div>
                 <div id='wetsuits' className='navItem' onClick={() => props.setView({ name: 'wetsuits', params: {}})}>Wetsuits</div>
                 <div id='accessories'className='navItem' onClick={() => props.setView({ name: 'accessories', params: {}})}>Accessories</div>  
