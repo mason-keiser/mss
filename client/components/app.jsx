@@ -8,7 +8,10 @@ import ShopAll from './shopAll';
 
 const App = () => {
     const [view, setView] = useState({ name: 'home', params: {}});
-    const [allProducts, setAllProducts] = useState();
+    const [allProducts, setAllProducts] = useState('all products');
+    const [surfProducts, setSurfProducts] = useState('surf products');
+    const [wetsuitProducts, setWetsuitProducts] = useState('wetsuit products')
+    const [accessoryProducts, setAccessoryProducts] = useState('accessory products')
 
     useEffect(() => {
         const navItems = document.querySelectorAll('.navItem')
@@ -20,6 +23,27 @@ const App = () => {
             }
         }
     },[view]) 
+
+    useEffect(() => {
+        let surf = [];
+        let wetsuits = [];
+        let accessories = [];
+
+        if (allProducts) {
+            for (let i = 0; i < allProducts.length; i++) {
+                if (allProducts[i].itemtype === 2) {
+                    surf.push(allProducts[i])
+                } else if (allProducts[i].itemtype === 1) {
+                    wetsuits.push(allProducts[i])
+                } else if (allProducts[i].itemtype === 3) {
+                    accessories.push(allProducts[i])
+                }
+            }
+            setSurfProducts(surf)
+            setWetsuitProducts(wetsuits)
+            setAccessoryProducts(accessories)
+        }
+    },[allProducts])
 
     useEffect(() => {
         fetch('/api/getAllProducts', {
