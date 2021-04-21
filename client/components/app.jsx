@@ -32,7 +32,12 @@ const App = () => {
     }, [])
 
     const viewTern = (view.name === 'home')
-        ? <HomeCarousel/>
+        ? (
+        <div>
+            <HomeCarousel/>
+            <ShopAll allProducts={allProducts} setView={setView}/>
+        </div>
+        )
         : (view.name === 'shopAll')
             ? <ShopAll allProducts={allProducts} setView={setView}/>
             : null
