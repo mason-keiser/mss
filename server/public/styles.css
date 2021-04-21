@@ -208,6 +208,9 @@ input[type=text]:focus{
 /* mobile devices */
 
 @media screen and (max-width: 470px) {
+    #home {
+        display: none;
+    }
 
     .singPost {
         display: flex;

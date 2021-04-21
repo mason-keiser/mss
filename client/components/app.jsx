@@ -50,7 +50,11 @@ const App = () => {
             ? <ShopAll allProducts={allProducts} setView={setView}/>
             : (view.name === 'surf')
                 ? null
-                : null
+                : (view.name === 'wetsuits')
+                    ? null
+                    : (view.name === 'accessories')
+                        ? null
+                        : null
     return (
         <div>
             <Nav setView={setView}/>
