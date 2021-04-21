@@ -44,7 +44,7 @@ const App = () => {
             }
             setSurfProducts(surf)
             setWetsuitProducts(wetsuits)
-            setAccessoryProducts(accessories)
+            setAccessoryProducts(accessories.reverse())
         }
     },[allProducts])
 
