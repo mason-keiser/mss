@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Accessories from './accessories';
 import HomeCarousel from './carousel';
 import Nav from './nav'
+import Searched from './search';
 import ShopAll from './shopAll';
 import Surf from './surf';
 import Wetsuits from './wetsuits';
@@ -15,6 +16,7 @@ const App = () => {
     const [surfProducts, setSurfProducts] = useState('surf products');
     const [wetsuitProducts, setWetsuitProducts] = useState('wetsuit products')
     const [accessoryProducts, setAccessoryProducts] = useState('accessory products')
+    const [searchedItems, setSearchedItems] = useState('search items')
 
     useEffect(() => {
         const navItems = document.querySelectorAll('.navItem')
@@ -71,6 +73,28 @@ const App = () => {
             })
     }, [])
 
+    const searchItems = (keyWord) => {
+        fetch('/api/searchProducts/' + keyWord, {
+            method: 'GET',
+            header: { 'Content-Type': 'application/json'}
+        })
+        .then(response => {
+            if (response.status === 400 || response.status === 404) {
+                return null
+            } else {
+                return response.json();
+            }
+            })
+            .then(result => {
+                if (!result) {
+                    return null
+                } else {
+                    setSearchedItems(result)
+                    setView({ name: 'search', params: {}})
+                }
+            })
+    }
+
     const viewTern = (view.name === 'home')
         ? <HomeCarousel/>
         : (view.name === 'shopAll')
@@ -81,10 +105,12 @@ const App = () => {
                     ? <Wetsuits wetsuitProducts={wetsuitProducts} setView={setView}/>
                     : (view.name === 'accessories')
                         ? <Accessories accessoryProducts={accessoryProducts} setView={setView}/>
-                        : null
+                        : (view.name === 'search')
+                            ? <Searched searchItems={searchedItems} setView={setView}/>
+                            : null
     return (
         <div>
-            <Nav setView={setView}/>
+            <Nav searchItems={searchItems} setView={setView}/>
             {viewTern}
         </div>
     )
