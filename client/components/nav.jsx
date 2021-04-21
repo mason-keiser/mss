@@ -5,14 +5,19 @@ const Nav = (props) => {
     const [searchWord, setSearchWord] = useState();
 
     const handleSearchSubmit = (callback) => {
+        const bar = document.getElementById('searchBar')
         if (!searchWord) {
-            document.getElementById('searchBar').placeholder = 'no search word entered'
+            bar.value = ''
+            bar.style.border = '1px solid red'
+            bar.placeholder = 'no search word entered'
             return null
         } else if (searchWord.length < 3) {
-            document.getElementById('searchBar').value = ''
-            document.getElementById('searchBar').placeholder = 'enter more characters'
+            bar.value = ''
+            bar.style.border = '1px solid red'
+            bar.placeholder = 'enter min 3 characters'
             return null
         }
+        bar.style.border = 'none'
         callback(searchWord)
     }
 
