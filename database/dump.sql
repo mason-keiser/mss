@@ -108,6 +108,9 @@ COPY public.products (productid, itemtype, name, price, image, description) FROM
 8	3	Mr. Zogs Sex Wax	500	/images/accessories/sexwax.jpg	Sexwax Quick Humps surfboard wax formulas are the "go to" choice for professional and experienced surfers around the world. Find the ideal balance between stability and stickiness by utilizing these formulas alone or as part of a Basecoat/Topcoat combination. Each bar individually packaged in shrink film.
 9	3	Sticky Bumps Surfboard Wax	700	/images/accessories/stickybumps.jpg	The Sticky Bumps Original Cold Wax is the softest formula wax for water temps below 60°F. Long-lasting and easy to apply, this is also the first traction wax that broke away from the use of a paraffin-based recipe.
 2	1	Lost Hydra Surfboard	65000	/images/boards/lostHydrya.webp	The HYDRA is a minuscule wave monster, melding more than 25 years of developing small wave fish and mini wave hybrids. It implements proven design details from a myriad of models like the Puddle Jumper, Bottom Feeder, Pelagic, and most recently the RNF-Retro.  Built around an overall low rocker paired to an almost traditional “fish” outline, this little sea monster is a mini-wave weapon. It features multiple magic making design elements which bring The HYDRA to life.On the outline, we’ve continued with the snowboard influenced “Pelagic” side cut outline. From our original Pelagic, to the RNF-Retro and on to the new SWORD-FISH, every board featuring this outline has worked above expectations.  It noticeably locks into the wave during carves and shortens the radius of turns while both gaining speed and maintaining control.
+10	3	Furnace Carbon Ultra 7mm Booties	9999	/images/accessories/billabongbooties.jpg	This new Furnace Carbon Ultra 7mm boot offers superior protection from the cold, while still providing great board feel.
+15	2	North Seas 4/3 Wetsuit	39999	/images/wetsuits/northseas.webp	Vissla’s warmest and most water tight suit featuring: I-Foam Premium- the lightest weight, warmest & stretchiest Japanese limestone based neoprene available; significantly less weight, enhanced flexibility and superior comfort. Full body hollow fiber Brain Fuzz lining insulates heat and dries fast. Upcycled Nylon XTEND exterior fabric: Eco-friendly, lighter, flexible, anti-fade stretch jersey made by Bluesign approved mills. Dope Dyed Fabric- A softer, eco-friendly, anti-fade made by Bluesign approved mills. AquaA eco-friendly water-based lamination is completely solvent free with no harmful chemicals.
+16	2	Buell RB1 Accelerator Wetsuit	22000	/images/wetsuits/buell.webp	The RB1 flies under the radar, and when used strategically, can lend limitless buckets of spray to any lip that dares get in your way. Without giving up the warmth that Buell Wetsuits are known for, this suit doubles down on flexibility. With its masterful blend of pliable "Ninja Neoprene" coupled with ergonomic, perfectly placed panels, the RB1 is your go-to wetsuit that keeps the crowd gasping as your spray extends to the heavens...
 \.
 
 
@@ -115,7 +118,7 @@ COPY public.products (productid, itemtype, name, price, image, description) FROM
 -- Name: products_productid_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.products_productid_seq', 9, true);
+SELECT pg_catalog.setval('public.products_productid_seq', 16, true);
 
 
 --
