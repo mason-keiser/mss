@@ -147,6 +147,8 @@ input[type=text]:focus{
 
 .bottomRow > div:hover {
     color: red;
+    text-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+    
 }
 
 .singPost {
