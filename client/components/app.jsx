@@ -37,10 +37,9 @@ const App = () => {
                 if (!result) {
                     return null
                 } else {
-                    const newResult = result.sort(function(a, b) {
+                    setAllProducts(result.sort(function(a, b) {
                         return a.itemtype - b.itemtype;
-                    })
-                    setAllProducts(newResult)
+                    }))
                 }
             })
     }, [])
