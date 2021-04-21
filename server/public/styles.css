@@ -76,7 +76,8 @@ body, * {
 }
 
 input[type=text]:focus{
-    outline: 0.5px solid red;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;;
   }
 
 .desk {
