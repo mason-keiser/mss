@@ -11,6 +11,17 @@ const App = () => {
     const [allProducts, setAllProducts] = useState();
 
     useEffect(() => {
+        const navItems = document.querySelectorAll('.navItem')
+        for (let i = 0; i < navItems.length; i++) {
+            if (navItems[i].id === view.name) {
+                navItems[i].style.color = 'red'
+            } else {
+                navItems[i].style.color = 'black'
+            }
+        }
+    },[view]) 
+
+    useEffect(() => {
         fetch('/api/getAllProducts', {
             method: 'GET',
             headers: { 'Content-Type': 'application/json'}
@@ -26,22 +37,21 @@ const App = () => {
                 if (!result) {
                     return null
                 } else {
-                    setAllProducts(result)
+                    const newResult = result.sort(function(a, b) {
+                        return a.itemtype - b.itemtype;
+                    })
+                    setAllProducts(newResult)
                 }
             })
     }, [])
 
     const viewTern = (view.name === 'home')
-        ? (
-        <div>
-            <HomeCarousel/>
-            <ShopAll allProducts={allProducts} setView={setView}/>
-        </div>
-        )
+        ? <HomeCarousel/>
         : (view.name === 'shopAll')
             ? <ShopAll allProducts={allProducts} setView={setView}/>
-            : null
-
+            : (view.name === 'surf')
+                ? null
+                : null
     return (
         <div>
             <Nav setView={setView}/>

@@ -26,10 +26,10 @@ const Nav = (props) => {
                 </div>
             </div>
             <div className='bottomRow'>
-                <div onClick={() => props.setView({ name: 'shopAll', params: {}})}>Shop All</div>
-                <div>Surf</div>
-                <div>Wetsuits</div>
-                <div>Accessories</div>       
+                <div id='shopAll' className='navItem' onClick={() => props.setView({ name: 'shopAll', params: {}})}>Shop All</div>
+                <div id='surf' className='navItem' onClick={() => props.setView({ name: 'surf', params: {}})}>Surf</div>
+                <div className='navItem'>Wetsuits</div>
+                <div className='navItem'>Accessories</div>       
             </div>
         </div>
     )
