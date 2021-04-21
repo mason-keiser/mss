@@ -40,6 +40,29 @@ app.get('/api/getAllProducts', (req, res, next) => {
 
 })
 
+// API TO SEARCH DB FOR POSTS BY NAME OR DESCRIPTION
+
+app.get('/api/searchProducts/:word', (req, res, next) => {
+  const word= req.params.word + ':*';
+  const sql = `
+  SELECT * FROM  "products"
+  WHERE to_tsvector("name"|| ' ' || "description") @@ to_tsquery($1)
+  `;
+
+  db.query(sql, [word])
+    .then(result => {
+      if (!result.rows[0]) {
+        return res.status(200).json({ message: `No notes contain: ${req.params.word}` });
+      } else {
+        return res.status(200).json(result.rows);
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({ error: 'An unexpected error occurred.' });
+    });
+})
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });
