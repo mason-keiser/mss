@@ -4,6 +4,10 @@ import {
     Row,
     Col
   } from 'reactstrap';
+  import {
+    Link,
+    animateScroll as scroll
+  } from 'react-scroll';
 
 const ShopAll = (props) => {
 
@@ -31,6 +35,9 @@ const ShopAll = (props) => {
             <Row className='row-cols-lg-3'>
                 {items}
             </Row>
+            <div className='toTop' onClick={() => scroll.scrollToTop()}>
+                <div className='fas fa-chevron-up' style={{color: 'white'}}></div>    
+            </div> 
         </div>
     )
 }

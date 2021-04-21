@@ -153,7 +153,7 @@ input[type=text]:focus{
     height: 50vh;
     background: white;
     margin: 1rem;
-    box-shadow: 2px 2px 80px rgba(0, 0, 0, 0.2);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .pageTitle {
@@ -164,6 +164,42 @@ input[type=text]:focus{
 
 .pageTitle > h1 {
     border-bottom: 3px solid red;
+}
+
+.cardImg > img {
+    
+    object-fit: contain;
+    height: 37vh;
+    width: 100%;
+}
+
+.productCard {
+    cursor: pointer;
+}
+
+.singPost:hover{
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+}
+
+.toTop {
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+    width: 45px;
+    height: 45px;
+    background: red;
+    border: 4px solid white;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.previewInfo > h5 {
+    font-weight: bold;
 }
 
 /* mobile devices */
@@ -286,6 +322,10 @@ input[type=text]:focus{
     .carousel-item > img {
         height: 86vh;
     }
+
+    .cardImg > img {
+        height: 25vh;
+    }
 }
 
 @media screen and (orientation: portrait) and (min-height: 1300px) {
@@ -305,5 +345,9 @@ input[type=text]:focus{
 
     .carousel-item > img {
         height: 88vh;
+    }
+    .cardImg > img {
+        height: 20vh;
+        margin-bottom: 1rem;
     }
 }
