@@ -1,9 +1,12 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import Accessories from './accessories';
 import HomeCarousel from './carousel';
 import Nav from './nav'
 import ShopAll from './shopAll';
+import Surf from './surf';
+import Wetsuits from './wetsuits';
 
 
 const App = () => {
@@ -31,9 +34,9 @@ const App = () => {
 
         if (allProducts) {
             for (let i = 0; i < allProducts.length; i++) {
-                if (allProducts[i].itemtype === 2) {
+                if (allProducts[i].itemtype === 1) {
                     surf.push(allProducts[i])
-                } else if (allProducts[i].itemtype === 1) {
+                } else if (allProducts[i].itemtype === 2) {
                     wetsuits.push(allProducts[i])
                 } else if (allProducts[i].itemtype === 3) {
                     accessories.push(allProducts[i])
@@ -73,11 +76,11 @@ const App = () => {
         : (view.name === 'shopAll')
             ? <ShopAll allProducts={allProducts} setView={setView}/>
             : (view.name === 'surf')
-                ? null
+                ? <Surf surfProducts={surfProducts} setView={setView}/>
                 : (view.name === 'wetsuits')
-                    ? null
+                    ? <Wetsuits wetsuitProducts={wetsuitProducts} setView={setView}/>
                     : (view.name === 'accessories')
-                        ? null
+                        ? <Accessories accessoryProducts={accessoryProducts} setView={setView}/>
                         : null
     return (
         <div>
