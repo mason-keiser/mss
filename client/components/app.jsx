@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import HomeCarousel from './carousel';
 import Nav from './nav'
+import ShopAll from './shopAll';
 
 
 const App = () => {
@@ -32,7 +33,9 @@ const App = () => {
 
     const viewTern = (view.name === 'home')
         ? <HomeCarousel/>
-        : null
+        : (view.name === 'shopAll')
+            ? <ShopAll allProducts={allProducts} setView={setView}/>
+            : null
 
     return (
         <div>

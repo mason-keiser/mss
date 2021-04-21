@@ -6,7 +6,7 @@ const Nav = (props) => {
     return (
         <div className='navbarCont shadow-lg'>
             <div className='topRow'>
-                <div className='logoIcon' onClick={() => scroll.scrollToTop()}>
+                <div className='logoIcon' onClick={() =>  props.setView({ name: 'home', params: {}})}>
                     <img src='/images/icon.png'></img>
                     <h2>Mas's Surf Shop</h2>
                 </div>
@@ -26,10 +26,10 @@ const Nav = (props) => {
                 </div>
             </div>
             <div className='bottomRow'>
-                <div>Shop All</div>
+                <div onClick={() => props.setView({ name: 'shopAll', params: {}})}>Shop All</div>
                 <div>Surf</div>
                 <div>Wetsuits</div>
-                <div>Accessories</div>
+                <div>Accessories</div>       
             </div>
         </div>
     )

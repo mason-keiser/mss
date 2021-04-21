@@ -149,9 +149,39 @@ input[type=text]:focus{
     color: red;
 }
 
+.singPost {
+    height: 50vh;
+    background: white;
+    margin: 1rem;
+    box-shadow: 2px 2px 80px rgba(0, 0, 0, 0.2);
+}
+
+.pageTitle {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+
+.pageTitle > h1 {
+    border-bottom: 3px solid red;
+}
+
 /* mobile devices */
 
 @media screen and (max-width: 470px) {
+    .singPost {
+        display: flex;
+        justify-content: center;
+    }
+
+    .singPost {
+        height: 50vh;
+        width: 85vw;
+        background: white;
+        margin: 1rem;
+        box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
+    }
+
     .carousel-caption.c2 {
         left: 15%
     }
@@ -210,9 +240,23 @@ input[type=text]:focus{
     .c3{
         top: 25%;
     }
+
+    .navbarCont {
+        height: 20vh;
+    }
+
+    .inputBtnCont {
+        margin-right: 0.5rem;
+    }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (orientation: portrait) and (min-height: 665px) and (max-height: 670px) {
+    .navbarCont {
+        height: 17vh;
+    }
+}
+
+@media screen and (min-width: 1500px) {
     .navbarCont {
         height: 15vh;
     }
@@ -222,5 +266,44 @@ input[type=text]:focus{
     .carousel-item > img {
         height: 85vh;
         object-fit: cover;
+    }
+}
+
+@media screen and (orientation: portrait) and (min-height: 1000px) {
+    .singPost {
+        width: 40vw;
+        height: 35vh;
+    }
+    .bottomRow{
+        height: 5rem;
+
+    }
+
+    .navbarCont {
+        height: 14vh;
+    }
+
+    .carousel-item > img {
+        height: 86vh;
+    }
+}
+
+@media screen and (orientation: portrait) and (min-height: 1300px) {
+    .singPost {
+        width: unset;
+        height: 30vh;
+    }
+
+    .bottomRow{
+        height: 5rem;
+        align-items: center;
+    }
+
+    .navbarCont {
+        height: 12vh;
+    }
+
+    .carousel-item > img {
+        height: 88vh;
     }
 }
