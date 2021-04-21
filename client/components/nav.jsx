@@ -38,7 +38,7 @@ const Nav = (props) => {
             <div className='topRow'>
                 <div className='logoIcon' onClick={() =>  homeNdClear()}>
                     <img src='/images/icon.png'></img>
-                    <h2>Mas's Surf Shop</h2>
+                    <h2>Mas' Surf Shop</h2>
                 </div>
                 <div className='desk'>
                     <div className='inputBtnCont'>

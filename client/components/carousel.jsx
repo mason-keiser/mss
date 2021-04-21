@@ -34,7 +34,7 @@ const HomeCarousel = () => {
                 />
 
                 <Carousel.Caption className='c3'>
-                <h1>Mas’s Surf Shop supports OneReef</h1>
+                <h1>Mas’ Surf Shop supports OneReef</h1>
                 <p>A portion of the proceeds from each purchase will go towards rebuilding and preserving reefs around the world</p>
                 </Carousel.Caption>
             </Carousel.Item>
