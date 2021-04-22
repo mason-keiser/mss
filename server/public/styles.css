@@ -322,6 +322,10 @@ input[type=text]:focus{
 /* mobile devices */
 
 @media screen and (max-width: 470px) {
+    #selectQty {
+        -webkit-appearance: none;
+    }
+    
     .btnRow {
         justify-content: space-between;
     }

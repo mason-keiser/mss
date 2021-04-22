@@ -46,7 +46,7 @@ import { useEffect } from 'react';
                     <h5>{`$${(price / 100).toFixed(2)}`}</h5>
                     <h4>{props.singPost.name}</h4>
                     <div className='btnRow'>
-                        <div className='quantityBtn mt-3'>
+                        <div className='quantityBtn mt-4'>
                             <div>Qty :  
                                 <select className='ml-2' name="" id="selectQty" onChange={handleQtyChange}>
                                     <option value="1">1</option>
@@ -61,7 +61,7 @@ import { useEffect } from 'react';
                                 </select>
                             </div>
                         </div>
-                        <div className='addToCart mt-3'>Add to cart</div>
+                        <div className='addToCart mt-4'>Add to cart</div>
                     </div>
                     <h5 className='mt-4'>Description: </h5>
                     <h5 className='mt-2'>{props.singPost.description}</h5>
