@@ -42,8 +42,8 @@ import { useEffect } from 'react';
                     <h4>{props.singPost.name}</h4>
                     <div>
                         <div className='quantityBtn mt-2'>
-                            <h6>Qty:
-                                <select name="" id="selectQty">
+                            <h6>Qty:  
+                                <select className='ml-2' name="" id="selectQty">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
