@@ -10,6 +10,7 @@ import SingPost from './singPost';
 import Surf from './surf';
 import Wetsuits from './wetsuits';
 import ViewProd from './singPost'
+import Cart from './cart'
 
 
 const App = () => {
@@ -120,6 +121,7 @@ const App = () => {
                 } else {
                 const newItems = cartItems.concat(result)
                    setCartItems(newItems)
+                   setView({ name: 'cart', params: {}})
                 }
             })
     }
@@ -160,7 +162,9 @@ const App = () => {
                             ? <Searched setSingPost={setSingPost} searchItems={searchedItems} setView={setView}/>
                             : (view.name === 'viewprod')
                                 ? <ViewProd postToCart={postToCart} getCartItems={getCartItems} setView={setView} setSingPost={setSingPost} singPost={singPost}/>
-                                : null
+                                : (view.name === 'cart')
+                                    ? <Cart setSingPost={setSingPost} cartItems={cartItems} setView={setView}/>
+                                    : null
     return (
         <div>
             <Nav cartItems={cartItems} searchItems={searchItems} setView={setView}/>

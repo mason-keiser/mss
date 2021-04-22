@@ -51,7 +51,7 @@ const Nav = (props) => {
                             <span className='fas fa-search'></span>
                         </div>
                     </div>
-                    <div className='cartCont'>
+                    <div className='cartCont' onClick={() => props.setView({ name: 'cart', params: {}})}>
                         <span className='fas fa-shopping-cart'></span>
                         <h4 className=' mt-1'>{cartLength}</h4>
                     </div>
