@@ -36,7 +36,8 @@ import { useEffect } from 'react';
 
     const price = Number(props.singPost.price)
     const id = {
-        productId: props.singPost.productid
+        productId: props.singPost.productid,
+        quantity: qty
     }
 
     return (

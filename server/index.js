@@ -73,6 +73,7 @@ app.get('/api/cart', (req, res, next) => {
   const cartItems = `
   SELECT "c"."cartItemId",
          "c"."price",
+         "c"."quantity",
          "p"."productid",
          "p"."image",
          "p"."name",
@@ -89,6 +90,7 @@ app.get('/api/cart', (req, res, next) => {
 
 app.post('/api/cartPost', (req, res, next) => {
   const productId = parseInt(req.body.productId);
+  const quantity = req.body.quantity
   if (!Number.isInteger(productId) || productId <= 0) {
     return res.status(400).json({ error: 'productId must be a positive integer' });
   }
@@ -123,16 +125,17 @@ app.post('/api/cartPost', (req, res, next) => {
     .then(newInfo => {
       req.session.cartId = newInfo.cartId;
       const cartItemsSQL = `
-      INSERT INTO"cartItems" ("cartId", "productid", "price")
-      VALUES                 ($1, $2, $3)
+      INSERT INTO"cartItems" ("cartId", "productid", "price", "quantity")
+      VALUES                 ($1, $2, $3, $4)
       RETURNING              "cartItemId";`;
-      return db.query(cartItemsSQL, [newInfo.cartId, productId, newInfo.productPrice]);
+      return db.query(cartItemsSQL, [newInfo.cartId, productId, newInfo.productPrice, quantity]);
     })
     .then(response => {
 
       const cartItemInfoSQL = `
       SELECT "c"."cartItemId",
              "c"."price",
+             "c"."quantity",
              "p"."productid",
              "p"."image",
              "p"."name",

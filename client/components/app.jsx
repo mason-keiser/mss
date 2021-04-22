@@ -163,7 +163,7 @@ const App = () => {
                                 : null
     return (
         <div>
-            <Nav searchItems={searchItems} setView={setView}/>
+            <Nav cartItems={cartItems} searchItems={searchItems} setView={setView}/>
             {viewTern}
         </div>
     )

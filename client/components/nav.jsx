@@ -33,6 +33,8 @@ const Nav = (props) => {
         props.setView({ name: 'home', params: {}})
     }
 
+    const cartLength = (!props.cartItems) ? 0 : props.cartItems.length
+
     return (
         <div className='navbarCont shadow-lg'>
             <div className='topRow'>
@@ -51,7 +53,7 @@ const Nav = (props) => {
                     </div>
                     <div className='cartCont'>
                         <span className='fas fa-shopping-cart'></span>
-                        <h4 className=' mt-1'>0</h4>
+                        <h4 className=' mt-1'>{cartLength}</h4>
                     </div>
                 </div>
             </div>
