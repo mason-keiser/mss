@@ -248,6 +248,7 @@ input[type=text]:focus{
     padding: 5px;
     font-size: 1.25rem;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;
+    text-align: center;
 }
 
 .quantityBtn:hover {
@@ -255,6 +256,26 @@ input[type=text]:focus{
 }
 
 .quantityBtn > div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.addToCart {
+    color: white;
+    width: 10vw;
+    background: red;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 1.25rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;
+    text-align: center;
+}
+
+.addToCart:hover {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+}
+
+.addToCart > div {
     display: flex;
     justify-content: space-around;
 }
@@ -268,6 +289,13 @@ input[type=text]:focus{
     width: 40%;
     text-align: center;
     position: relative;
+    display: block;
+    max-width: 320px;
+    float: right;
+    color: white;
+    background-image: none;
+    -ms-word-break: normal;
+    word-break: normal;
 }
   
 #selectQty:after {
@@ -278,30 +306,31 @@ input[type=text]:focus{
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
     right: 11px;
-    /*Adjust for position however you want*/
     top: 18px;
     padding: 0 0 2px;
     border-bottom: 1px solid #999;
-    /*left line */
     position: absolute;
     pointer-events: none;
   }
-  
-  #selectQty {
-    display: block;
-    max-width: 320px;
-    float: right;
-    color: white;
-    background-image: none;
-    -ms-word-break: normal;
-    word-break: normal;
+
+  .btnRow {
+      display: flex;
+      justify-content: space-evenly;
   }
   
 
 /* mobile devices */
 
 @media screen and (max-width: 470px) {
+    .btnRow {
+        justify-content: space-between;
+    }
+
     .quantityBtn {
+        width: 30vw;
+    }
+
+    .addToCart{
         width: 30vw;
     }
 
