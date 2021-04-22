@@ -1,2 +1,2 @@
-# Mas's Surf Shop
+# Mas' Surf Shop
 A full stack eCommerce application
