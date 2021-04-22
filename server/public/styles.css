@@ -174,15 +174,14 @@ input[type=text]:focus{
     border-bottom: 3px solid red;
 }
 
-.cardImg > img {
-    
-    object-fit: contain;
+.cardImg {
     height: 37vh;
     width: 100%;
+    overflow: hidden;
 }
 
 .cardImg > img {
-    
+    overflow: hidden;
     object-fit: contain;
     height: 37vh;
     width: 100%;
@@ -377,6 +376,9 @@ input[type=text]:focus{
     .cardImg > img {
         height: 25vh;
     }
+    .cardImg {
+        height: 25vh;
+    }
 }
 
 @media screen and (orientation: portrait) and (min-height: 1300px) {
@@ -398,6 +400,10 @@ input[type=text]:focus{
         height: 88vh;
     }
     .cardImg > img {
+        height: 20vh;
+        margin-bottom: 1rem;
+    }
+    .cardImg {
         height: 20vh;
         margin-bottom: 1rem;
     }

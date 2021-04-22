@@ -15,13 +15,13 @@ import { useEffect } from 'react';
     const close = () => {
         if (props.singPost.itemtype === 1) {
             props.setView({ name: 'surf', params: {}})
-            setSingPost('')
+            props.setSingPost('')
         } else if (props.singPost.itemtype === 2) {
             props.setView({ name: 'wetsuits', params: {}})
-            setSingPost('')
+            props.setSingPost('')
         } else if (props.singPost.itemtype === 3) {
             props.setView({ name: 'accessories', params: {}})
-            setSingPost('')
+            props.setSingPost('')
         }
     }
 
@@ -34,13 +34,14 @@ import { useEffect } from 'react';
     return (
         <div className='itemContainer'>
             <span onClick={() => close()} className='fas fa-times'></span>
-            <div className='cardImg'>
-                    <img src={props.singPost.image} alt=""/>
+            <div className='cardImg' id='imgCo'>
+                    <img src={props.singPost.image} id='zoomImg' alt=""/>
             </div>
             <div className='previewInfo mt-1 ml-3'>
                     <h5>{`$${(price / 100).toFixed(2)}`}</h5>
-                    <h5>{props.singPost.name}</h5>
-                    <h5>{props.singPost.description}</h5>
+                    <h4>{props.singPost.name}</h4>
+                    <h5 className='mt-4'>Description: </h5>
+                    <h5 className='mt-2'>{props.singPost.description}</h5>
             </div>
         </div>
     )
