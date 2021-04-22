@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ItemCard from './itemCard'
 import {
     Row,
@@ -11,6 +11,11 @@ import {
 import { useEffect } from 'react';
 
   const ViewProd = (props) => {
+    const [qty, setQty] = useState("1");
+
+    const handleQtyChange = (event) => {
+       setQty(event.target.value)
+    }
 
     const close = () => {
         if (props.singPost.itemtype === 1) {
@@ -37,13 +42,13 @@ import { useEffect } from 'react';
             <div className='cardImg' id='imgCo'>
                     <img src={props.singPost.image} id='zoomImg' alt=""/>
             </div>
-            <div className='previewInfo mt-1 ml-3'>
+            <div className='previewInfo m-2'>
                     <h5>{`$${(price / 100).toFixed(2)}`}</h5>
                     <h4>{props.singPost.name}</h4>
                     <div>
                         <div className='quantityBtn mt-3'>
                             <div>Qty :  
-                                <select className='ml-2' name="" id="selectQty">
+                                <select className='ml-2' name="" id="selectQty" onChange={handleQtyChange}>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -54,7 +59,6 @@ import { useEffect } from 'react';
                                     <option value="8">8</option>
                                     <option value="9">9</option>
                                 </select>
-                                <span className='fas fa-chevron-down'></span>
                             </div>
                         </div>
                     </div>

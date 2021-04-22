@@ -265,8 +265,38 @@ input[type=text]:focus{
     color: white;
     cursor: pointer;
     outline: none;
-    -webkit-appearance: none;
+    width: 40%;
+    text-align: center;
+    position: relative;
 }
+  
+#selectQty:after {
+    content: '<>';
+    color: white;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 11px;
+    /*Adjust for position however you want*/
+    top: 18px;
+    padding: 0 0 2px;
+    border-bottom: 1px solid #999;
+    /*left line */
+    position: absolute;
+    pointer-events: none;
+  }
+  
+  #selectQty {
+    display: block;
+    max-width: 320px;
+    float: right;
+    color: white;
+    background-image: none;
+    -ms-word-break: normal;
+    word-break: normal;
+  }
+  
 
 /* mobile devices */
 
@@ -348,6 +378,9 @@ input[type=text]:focus{
 /* SE and smaller */
 
 @media screen and (max-width: 330px) {
+    .singPost {
+        height: 55vh;
+    }
     .carousel-caption {
         top: 20%;
     }
