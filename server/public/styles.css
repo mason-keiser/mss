@@ -241,9 +241,40 @@ input[type=text]:focus{
     opacity: 80%;
 }
 
+.quantityBtn {
+    color: white;
+    width: 10vw;
+    background: red;
+    padding: 5px;
+    font-size: 1.25rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;
+}
+
+.quantityBtn:hover {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+}
+
+.quantityBtn > div {
+    display: flex;
+    justify-content: space-around;
+}
+
+#selectQty {
+    border: none;
+    background: red;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: none;
+}
+
 /* mobile devices */
 
 @media screen and (max-width: 470px) {
+    .quantityBtn {
+        width: 30vw;
+    }
+
     .itemContainer {
         width: 90vw;
         margin-top: 1.5rem;
