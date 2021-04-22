@@ -17,6 +17,7 @@ import {
                 <div className='m-auto'  key={index}>
                     <div className='singPost'>
                         <ItemCard
+                        setSingPost={props.setSingPost}
                         setView={props.setView}
                         product={product}
                         />

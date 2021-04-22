@@ -17,6 +17,7 @@ const App = () => {
     const [wetsuitProducts, setWetsuitProducts] = useState('wetsuit products')
     const [accessoryProducts, setAccessoryProducts] = useState('accessory products')
     const [searchedItems, setSearchedItems] = useState('search items')
+    const [singPost, setSingPost] = useState();
 
     useEffect(() => {
         const navItems = document.querySelectorAll('.navItem')
@@ -98,15 +99,15 @@ const App = () => {
     const viewTern = (view.name === 'home')
         ? <HomeCarousel/>
         : (view.name === 'shopAll')
-            ? <ShopAll allProducts={allProducts} setView={setView}/>
+            ? <ShopAll setSingPost={setSingPost} allProducts={allProducts} setView={setView}/>
             : (view.name === 'surf')
-                ? <Surf surfProducts={surfProducts} setView={setView}/>
+                ? <Surf setSingPost={setSingPost} surfProducts={surfProducts} setView={setView}/>
                 : (view.name === 'wetsuits')
-                    ? <Wetsuits wetsuitProducts={wetsuitProducts} setView={setView}/>
+                    ? <Wetsuits setSingPost={setSingPost} wetsuitProducts={wetsuitProducts} setView={setView}/>
                     : (view.name === 'accessories')
-                        ? <Accessories accessoryProducts={accessoryProducts} setView={setView}/>
+                        ? <Accessories setSingPost={setSingPost} accessoryProducts={accessoryProducts} setView={setView}/>
                         : (view.name === 'search')
-                            ? <Searched searchItems={searchedItems} setView={setView}/>
+                            ? <Searched setSingPost={setSingPost} searchItems={searchedItems} setView={setView}/>
                             : null
     return (
         <div>

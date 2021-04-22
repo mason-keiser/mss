@@ -6,7 +6,7 @@ const ItemCard = (props) => {
 
     return (
         <div>
-            <div className='productCard'>
+            <div className='productCard' onClick={() => props.setSingPost(props.product)}>
                 <div className='cardImg'>
                     <img src={props.product.image} alt=""/>
                 </div>
