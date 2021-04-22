@@ -19,7 +19,8 @@ const App = () => {
     const [wetsuitProducts, setWetsuitProducts] = useState('wetsuit products')
     const [accessoryProducts, setAccessoryProducts] = useState('accessory products')
     const [searchedItems, setSearchedItems] = useState('search items')
-    const [singPost, setSingPost] = useState();
+    const [singPost, setSingPost] = useState('singular post');
+    const [cartItems, setCartItems] = useState([])
 
     useEffect(() => {
         const navItems = document.querySelectorAll('.navItem')
@@ -74,7 +75,54 @@ const App = () => {
                     }))
                 }
             })
+            getCartItems()
     }, [])
+
+    const getCartItems = () => {
+        fetch('/api/cart', {
+            method: 'GET',
+            header: { 'Content-Type': 'application/json'}
+        })
+        .then(response => {
+            if (response.status === 400 || response.status === 404) {
+                return null
+            } else {
+                return response.json();
+            }
+            })
+            .then(result => {
+                if (!result) {
+                    return null
+                } else {
+                    const newItems = cartItems.concat(result)
+                    setCartItems(newItems)
+                    console.log(result)
+                }
+            })
+    }
+
+    const postToCart = (productid) => {
+        fetch('/api/cartPost', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(productid)
+          })
+          .then(response => {
+            if (response.status === 400 || response.status === 404) {
+                return null
+            } else {
+                return response.json();
+            }
+            })
+            .then(result => {
+                if (!result) {
+                    return null
+                } else {
+                const newItems = cartItems.concat(result)
+                   setCartItems(newItems)
+                }
+            })
+    }
 
     const searchItems = (keyWord) => {
         fetch('/api/searchProducts/' + keyWord, {
@@ -111,7 +159,7 @@ const App = () => {
                         : (view.name === 'search')
                             ? <Searched setSingPost={setSingPost} searchItems={searchedItems} setView={setView}/>
                             : (view.name === 'viewprod')
-                                ? <ViewProd setView={setView} setSingPost={setSingPost} singPost={singPost}/>
+                                ? <ViewProd postToCart={postToCart} getCartItems={getCartItems} setView={setView} setSingPost={setSingPost} singPost={singPost}/>
                                 : null
     return (
         <div>

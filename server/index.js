@@ -87,7 +87,7 @@ app.get('/api/cart', (req, res, next) => {
 
 // API TO POST TO CART
 
-app.post('/api/carts', (req, res, next) => {
+app.post('/api/cartPost', (req, res, next) => {
   const productId = parseInt(req.body.productId);
   if (!Number.isInteger(productId) || productId <= 0) {
     return res.status(400).json({ error: 'productId must be a positive integer' });
@@ -142,7 +142,7 @@ app.post('/api/carts', (req, res, next) => {
       WHERE  "c"."cartItemId" = $1;
       `;
       return db.query(cartItemInfoSQL, [response.rows[0].cartItemId])
-        .then(response => res.status(201).json(response.rows[0]));
+        .then(response => res.status(201).json(response.rows));
     })
     .catch(err => next(err));
 });

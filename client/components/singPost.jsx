@@ -35,6 +35,9 @@ import { useEffect } from 'react';
     },[])
 
     const price = Number(props.singPost.price)
+    const id = {
+        productId: props.singPost.productid
+    }
 
     return (
         <div className='itemContainer'>
@@ -61,7 +64,7 @@ import { useEffect } from 'react';
                                 </select>
                             </div>
                         </div>
-                        <div className='addToCart mt-4'>Add to cart</div>
+                        <div className='addToCart mt-4' onClick={() => props.postToCart(id)}>Add to cart</div>
                     </div>
                     <h5 className='mt-4'>Description: </h5>
                     <h5 className='mt-2'>{props.singPost.description}</h5>
