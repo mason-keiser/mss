@@ -8,8 +8,13 @@ import {
     Link,
     animateScroll as scroll
   } from 'react-scroll';
+  import { useEffect } from 'react';
 
   const Accessories = (props) => {
+
+    useEffect(() => {
+        scroll.scrollToTop();
+    },[])
 
     const items = (props.accessoryProducts !== null && props.accessoryProducts !== undefined) 
     ?  (props.accessoryProducts.map((product, index) => {

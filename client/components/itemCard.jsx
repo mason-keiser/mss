@@ -4,9 +4,14 @@ const ItemCard = (props) => {
 
     const price = Number(props.product.price)
 
+    const setItemProd = () => {
+        props.setSingPost(props.product)
+        props.setView({ name: 'viewprod', params: {}})
+    }
+
     return (
         <div>
-            <div className='productCard' onClick={() => props.setSingPost(props.product)}>
+            <div className='productCard' onClick={() => setItemProd()}>
                 <div className='cardImg'>
                     <img src={props.product.image} alt=""/>
                 </div>

@@ -6,8 +6,10 @@ import HomeCarousel from './carousel';
 import Nav from './nav'
 import Searched from './search';
 import ShopAll from './shopAll';
+import SingPost from './singPost';
 import Surf from './surf';
 import Wetsuits from './wetsuits';
+import ViewProd from './singPost'
 
 
 const App = () => {
@@ -108,7 +110,9 @@ const App = () => {
                         ? <Accessories setSingPost={setSingPost} accessoryProducts={accessoryProducts} setView={setView}/>
                         : (view.name === 'search')
                             ? <Searched setSingPost={setSingPost} searchItems={searchedItems} setView={setView}/>
-                            : null
+                            : (view.name === 'viewprod')
+                                ? <ViewProd setView={setView} setSingPost={setSingPost} singPost={singPost}/>
+                                : null
     return (
         <div>
             <Nav searchItems={searchItems} setView={setView}/>

@@ -8,9 +8,14 @@ import {
     Link,
     animateScroll as scroll
   } from 'react-scroll';
+  import { useEffect } from 'react';
 
 
   const Searched = (props) => {
+
+    useEffect(() => {
+        scroll.scrollToTop();
+    },[])
 
     const items = (props.searchItems !== null && props.searchItems!== undefined) 
     ?  (props.searchItems.map((product, index) => {

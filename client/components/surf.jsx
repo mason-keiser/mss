@@ -8,8 +8,13 @@ import {
     Link,
     animateScroll as scroll
   } from 'react-scroll';
+  import { useEffect } from 'react';
 
   const Surf = (props) => {
+
+    useEffect(() => {
+        scroll.scrollToTop();
+    },[])
 
     const items = (props.surfProducts !== null && props.surfProducts !== undefined) 
     ?  (props.surfProducts.map((product, index) => {

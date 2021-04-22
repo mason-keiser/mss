@@ -8,9 +8,14 @@ import {
     Link,
     animateScroll as scroll
   } from 'react-scroll';
+  import { useEffect } from 'react';
 
 
   const Wetsuits = (props) => {
+
+    useEffect(() => {
+        scroll.scrollToTop();
+    },[])
 
     const items = (props.wetsuitProducts !== null && props.wetsuitProducts !== undefined) 
     ?  (props.wetsuitProducts.map((product, index) => {
