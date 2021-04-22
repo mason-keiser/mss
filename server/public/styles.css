@@ -195,6 +195,10 @@ input[type=text]:focus{
     box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
 }
 
+.cartI:hover{
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+}
+
 .toTop {
     position: fixed;
     bottom: 10px;
@@ -317,6 +321,14 @@ input[type=text]:focus{
       display: flex;
       justify-content: space-evenly;
   }
+
+  .cartI {
+      width: 30vw;
+      height: 50vh;
+      background: white;
+      margin: 1rem;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
   
 
 /* mobile devices */
@@ -354,7 +366,19 @@ input[type=text]:focus{
         justify-content: center;
     }
 
+    .cartItem {
+        width: 85vw;
+    }
+
     .singPost {
+        height: 50vh;
+        width: 85vw;
+        background: white;
+        margin: 1rem;
+        box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
+    }
+
+    .cartI {
         height: 50vh;
         width: 85vw;
         background: white;
@@ -414,6 +438,9 @@ input[type=text]:focus{
     .singPost {
         height: 55vh;
     }
+    .cartI {
+        height: 55vh;
+    }
     .carousel-caption {
         top: 20%;
     }
@@ -457,6 +484,10 @@ input[type=text]:focus{
         width: 40vw;
         height: 35vh;
     }
+    .cartI {
+        width: 40vw;
+        height: 35vh;
+    }
     .bottomRow{
         height: 5rem;
 
@@ -480,6 +511,11 @@ input[type=text]:focus{
 
 @media screen and (orientation: portrait) and (min-height: 1300px) {
     .singPost {
+        width: unset;
+        height: 30vh;
+    }
+
+    .cartI {
         width: unset;
         height: 30vh;
     }

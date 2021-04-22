@@ -20,7 +20,7 @@ import {
     ?  (props.cartItems.map((product, index) => {
             return(
                 <div className='m-auto'  key={index}>
-                    <div className='singPost'>
+                    <div className='cartI'>
                         <ItemCard
                         setSingPost={props.setSingPost}
                         setView={props.setView}
@@ -38,11 +38,11 @@ import {
             <div className='pageTitle'>
                 <h1>My Cart</h1>
             </div>
-            <div className=''>
+            <div className='d-flex flex-column'>
                 {items}
             </div>
-            <div className='toTop' onClick={() => scroll.scrollToTop()}>
-                <div className='fas fa-chevron-up' style={{color: 'white'}}></div>    
+            <div className='toTop' onClick={() => null}>
+                <div className='fas fa-shopping-cart' style={{color: 'white'}}></div>    
             </div> 
         </div>
     )
