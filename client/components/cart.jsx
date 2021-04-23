@@ -16,7 +16,7 @@ import {
         scroll.scrollToTop();
     },[])
 
-    const items = (props.cartItems !== null && props.cartItems !== undefined) 
+    const items = ((props.cartItems !== null && props.cartItems !== undefined) || props.cartItems.length !== 0) 
     ?  (props.cartItems.map((product, index) => {
             return(
                 <div className='m-auto'  key={index}>
@@ -33,12 +33,21 @@ import {
     )
     : null
 
+    const prevItems = (props.cartItems.length === 0) 
+        ? (
+            <h3 className='prevCart mb-4'>no items in cart!</h3>
+        ) 
+        :  (
+        <h3 className='prevCart mb-4'>There are {props.cartItems.length} item(s) in your cart</h3>
+        )
+
     return (
         <div className='container'>
             <div className='pageTitle'>
                 <h1>My Cart</h1>
             </div>
             <div className='d-flex flex-column'>
+                {prevItems}
                 {items}
             </div>
             <div className='toTop' onClick={() => null}>

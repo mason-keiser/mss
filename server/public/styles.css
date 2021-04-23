@@ -330,6 +330,9 @@ input[type=text]:focus{
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
   
+  .prevCart {
+    text-align: center;
+  }
 
 /* mobile devices */
 
