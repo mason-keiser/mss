@@ -41,16 +41,17 @@ const CartItem = (props) => {
                     <h5>{`$${(price / 100).toFixed(2)}`}</h5>
                     <h5>{props.product.name}</h5>
                 </div>
-                <div>
+                <div className='d-flex flex-row justify-content-between align-items-center'>
                     <div className='d-flex flex-row ml-3 pb-3 mt-3'>
                         <div onClick={() => qtyHandler(event)} id='d' className='d-flex incBtns fas fa-minus'></div>
                         <div className='qtyView'>{cartIqty}</div>
                         <div onClick={() => qtyHandler(event)} id='i' className='d-flex incBtns fas fa-plus'></div>
                     </div>
-                    <div className='ml-3 pb-3 mt-1'>
-                        <h5>Subtotal :</h5>
-                        <h5>{`$${(subtotal / 100).toFixed(2)}`}</h5>
-                    </div>
+                    <div className='updateBtn mr-3'>Update</div>
+                </div>
+                <div className='ml-3 pb-3 mt-1'>
+                    <h5>Subtotal :</h5>
+                    <h5>{`$${(subtotal / 100).toFixed(2)}`}</h5>
                 </div>
             </div>
         </div>

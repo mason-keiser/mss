@@ -353,9 +353,28 @@ input[type=text]:focus{
     padding: 5px 15px;
   }
 
+  .updateBtn {
+    padding: 5px;
+    background: red;
+    color: white;
+    width: 10vw;
+    text-align: center;
+    font-size: large;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;
+  }
+
+  .updateBtn:hover {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+  }
+
 /* mobile devices */
 
 @media screen and (max-width: 470px) {
+
+    .updateBtn {
+        width: 20vw;
+        font-size: larger;
+    }
     .incBtns {
         width: 10vw;
     }
