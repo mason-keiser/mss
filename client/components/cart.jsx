@@ -12,7 +12,7 @@ import {
 import { useState } from 'react';
 
   const Cart = (props) => {
-    const [priceState, setPrice] = useState()
+    const [priceState, setPrice] = useState('$0')
 
     useEffect(() => {
         scroll.scrollToTop();
@@ -21,10 +21,15 @@ import { useState } from 'react';
     useEffect(() => {
         const subtotals = document.querySelectorAll('.subtotal')
         let price = 0;
-        for (let i = 0; i < subtotals.length; i++) {
-            price = price + Number(subtotals[i].id)
+        if (!props.cartItems) {
+            setPrice('$0')
+            return null
+        } else  {   
+            for (let i = 0; i < subtotals.length; i++) {
+                price = price + (Number(subtotals[i].id))
+            }
+            setPrice(price)
         }
-        setPrice(`$${(price / 100).toFixed(2)}`)
     },[props.cartItems])
 
     const items = ((props.cartItems !== null && props.cartItems !== undefined) || props.cartItems.length !== 0) 
@@ -50,13 +55,13 @@ import { useState } from 'react';
     const prevItems = (props.cartItems.length === 0) 
         ? (
             <div>
-                <h2>Total: {priceState}</h2>
+                <h2 style={{textAlign: 'center'}}>Total: {`$${(priceState / 100).toFixed(2)}`}</h2>
                 <h4 className='prevCart mt-4'>No items in cart</h4>
             </div>
         ) 
         :  (
             <div>
-                <h2 style={{textAlign: 'center'}}>Total: {priceState}</h2>
+                <h2 style={{textAlign: 'center'}}>Total: {`$${(priceState / 100).toFixed(2)}`}</h2>
                 <h4 className='prevCart mt-4'>There are {props.cartItems.length} item(s) in your cart</h4>
             </div>
         )

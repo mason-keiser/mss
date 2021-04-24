@@ -54,7 +54,7 @@ const CartItem = (props) => {
                     <div className='updateBtn mr-3'>Update</div>
                 </div>
                 <div className='ml-3 pb-3 mt-1'>
-                    <h5 className='subtotal' id={price}>Subtotal :</h5>
+                    <h5 className='subtotal' name={props.product.cartItemId} id={price}>Subtotal :</h5>
                     <h5>{`$${(subtotal / 100).toFixed(2)}`}</h5>
                 </div>
             </div>
