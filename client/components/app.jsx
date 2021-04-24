@@ -122,12 +122,16 @@ const App = () => {
                 if (!result) {
                     return null
                 } else {
-                    
-                   if (cartItems.length === 1) {
-                       setCartItems([])
-                   } else {
-                       setCartItems(cartItems)
-                   }
+                    let newArr = []
+                    let trash = []
+                    for (let i = 0; i < cartItems.length; i++) {
+                        if (result.cartItemId === cartItems[i].cartItemId) {
+                            trash.push(cartItems[i])
+                        } else {
+                            newArr.push(cartItems[i])
+                        }
+                    }
+                    setCartItems(newArr)
                 }
             })
     }

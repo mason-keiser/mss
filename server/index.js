@@ -159,12 +159,7 @@ app.delete('/api/deleteItem' , (req, res, next) => {
   WHERE "cartItemId" = $1
   RETURNING *
   `
-
-  const getSQL = `
-  SELECT * FROM "cartItems"
   
-  `
-
   db.query(sql, [cartItemId])
   .then(result => {
     if (!result.rows[0]) {
