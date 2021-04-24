@@ -5,7 +5,8 @@ import { useState } from 'react';
 const CartItem = (props) => {
     const [cartIqty, setCartIQty] = useState(props.product.quantity)
 
-    const price = Number(props.product.price)
+    const price = Number(props.product.price) 
+    const subtotal = price * cartIqty
 
 
     const setItemProd = () => {
@@ -46,8 +47,9 @@ const CartItem = (props) => {
                         <div className='qtyView'>{cartIqty}</div>
                         <div onClick={() => qtyHandler(event)} id='i' className='d-flex incBtns fas fa-plus'></div>
                     </div>
-                    <div>
-
+                    <div className='ml-3 pb-3 mt-1'>
+                        <h5>Subtotal :</h5>
+                        <h5>{`$${(subtotal / 100).toFixed(2)}`}</h5>
                     </div>
                 </div>
             </div>
