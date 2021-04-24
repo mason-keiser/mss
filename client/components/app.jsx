@@ -126,7 +126,7 @@ const App = () => {
                    if (cartItems.length === 1) {
                        setCartItems([])
                    } else {
-                       setView({ name: 'cart', params: {}})
+                       setCartItems(cartItems)
                    }
                 }
             })

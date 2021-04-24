@@ -157,34 +157,26 @@ app.delete('/api/deleteItem' , (req, res, next) => {
   const sql = `
   DELETE FROM "cartItems"
   WHERE "cartItemId" = $1
+  RETURNING *
   `
 
   const getSQL = `
   SELECT * FROM "cartItems"
-  WHERE "cartId" = $1
+  
   `
 
   db.query(sql, [cartItemId])
-    .then(result => {
-      if (!result){
-        return res.status(400).json({ message: `get products attempt was unsuccessful`})
-      }
-      db.query(getSQL, [req.session.cartId])
-      .then(result2 => {
-        if (!result2){
-          return res.status(400).json({ message: `get products attempt was unsuccessful`})
-        }
-        return res.status(200).json(result2.rows)
-      })
-      .catch(err => {
-        console.error(err);
-        res.status(500).json({ error: 'An unexpected error occurred.' });
-      });
-    })
-    .catch(err => {
-      console.error(err);
-      res.status(500).json({ error: 'An unexpected error occurred.' });
-    });
+  .then(result => {
+    if (!result.rows[0]) {
+      return res.status(200).json({ message: `NO return array` });
+    } else {
+      return res.status(200).json(result.rows[0]);
+    }
+  })
+  .catch(err => {
+    console.error(err);
+    res.status(500).json({ error: 'An unexpected error occurred.' });
+  });
 })
 
 app.use('/api', (req, res, next) => {
