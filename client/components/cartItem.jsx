@@ -43,7 +43,7 @@ const CartItem = (props) => {
                 </div>
                 <div className='previewInfo mt-1 ml-3'>
                     <h5>{`$${(price / 100).toFixed(2)}`}</h5>
-                    <h5>{props.product.name}</h5>
+                    <h5 onClick={() => setItemProd()}>{props.product.name}</h5>
                 </div>
                 <div className='d-flex flex-row justify-content-between align-items-center'>
                     <div className='d-flex flex-row ml-3 pb-3 mt-3'>
