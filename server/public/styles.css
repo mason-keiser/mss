@@ -369,6 +369,7 @@ input[type=text]:focus{
 
   .del{
     cursor: pointer;
+    font-size: 1.5rem;
   }
 
   .del:hover {

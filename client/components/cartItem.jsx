@@ -36,7 +36,7 @@ const CartItem = (props) => {
 
     return (
         <div>
-            <span onClick={() => props.deleteCartItem(id)} className='fas fa-times mt-2 ml-2 del'></span>
+            <span onClick={() => props.deleteCartItem(id)} className='fas fa-times mt-3 ml-3 del'></span>
             <div className='productCard cartCard' style={{ height: '100%'}}>
                 <div className='cardImg'>
                     <img src={props.product.image} alt=""/>
@@ -54,7 +54,7 @@ const CartItem = (props) => {
                     <div className='updateBtn mr-3'>Update</div>
                 </div>
                 <div className='ml-3 pb-3 mt-1'>
-                    <h5>Subtotal :</h5>
+                    <h5 className='subtotal' id={price}>Subtotal :</h5>
                     <h5>{`$${(subtotal / 100).toFixed(2)}`}</h5>
                 </div>
             </div>

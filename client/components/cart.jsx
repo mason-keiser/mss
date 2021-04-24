@@ -9,14 +9,23 @@ import {
     animateScroll as scroll
   } from 'react-scroll';
   import { useEffect } from 'react';
+import { useState } from 'react';
 
   const Cart = (props) => {
+    const [priceState, setPrice] = useState()
 
     useEffect(() => {
         scroll.scrollToTop();
     },[])
 
-    useEffect(() => {},[props.cartItems])
+    useEffect(() => {
+        const subtotals = document.querySelectorAll('.subtotal')
+        let price = 0;
+        for (let i = 0; i < subtotals.length; i++) {
+            price = price + Number(subtotals[i].id)
+        }
+        setPrice(`$${(price / 100).toFixed(2)}`)
+    },[props.cartItems])
 
     const items = ((props.cartItems !== null && props.cartItems !== undefined) || props.cartItems.length !== 0) 
     ?  (props.cartItems.map((product, index) => {
@@ -24,6 +33,7 @@ import {
                 <div className='m-auto'  key={index}>
                     <div className='cartI'>
                         <CartItem
+                        priceState={priceState}
                         cartItems={props.cartItems}
                         setSingPost={props.setSingPost}
                         setView={props.setView}
@@ -39,10 +49,16 @@ import {
 
     const prevItems = (props.cartItems.length === 0) 
         ? (
-            <h3 className='prevCart mb-4'>No items in cart</h3>
+            <div>
+                <h2>Total: {priceState}</h2>
+                <h4 className='prevCart mt-4'>No items in cart</h4>
+            </div>
         ) 
         :  (
-            <h3 className='prevCart mb-4'>There are {props.cartItems.length} item(s) in your cart</h3>
+            <div>
+                <h2 style={{textAlign: 'center'}}>Total: {priceState}</h2>
+                <h4 className='prevCart mt-4'>There are {props.cartItems.length} item(s) in your cart</h4>
+            </div>
         )
 
     return (
