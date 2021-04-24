@@ -23,6 +23,8 @@ const App = () => {
     const [singPost, setSingPost] = useState('singular post');
     const [cartItems, setCartItems] = useState([])
 
+    useEffect(() => {},[cartItems])
+
     useEffect(() => {
         const navItems = document.querySelectorAll('.navItem')
         for (let i = 0; i < navItems.length; i++) {
@@ -97,7 +99,36 @@ const App = () => {
                 } else {
                     const newItems = cartItems.concat(result).reverse()
                     setCartItems(newItems)
-                    console.log(result)
+                }
+            })
+    }
+
+    const deleteCartItem = (cartItemId) => {
+        fetch('/api/deleteItem', {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(cartItemId)
+        })
+        .then(response => {
+            if (response.status === 400 || response.status === 404) {
+                return null
+            } else {
+                return response.json();
+            }
+            })
+            .then(result => {
+                if (!result) {
+                    return null
+                } else {
+                   const newItems = getCartItems();
+                   console.log(newItems)
+                   if (!newItems) {
+                       setCartItems([])
+                   } else {
+                       getCartItems()
+                   }
                 }
             })
     }
@@ -163,7 +194,7 @@ const App = () => {
                             : (view.name === 'viewprod')
                                 ? <ViewProd postToCart={postToCart} getCartItems={getCartItems} setView={setView} setSingPost={setSingPost} singPost={singPost}/>
                                 : (view.name === 'cart')
-                                    ? <Cart setSingPost={setSingPost} cartItems={cartItems} setView={setView}/>
+                                    ? <Cart deleteCartItem={deleteCartItem} setSingPost={setSingPost} cartItems={cartItems} setView={setView}/>
                                     : null
     return (
         <div>

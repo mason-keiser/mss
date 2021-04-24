@@ -30,9 +30,13 @@ const CartItem = (props) => {
         }
     }
 
+    const id = {
+        cartItemId: props.product.cartItemId
+    }
+
     return (
         <div>
-            <span onClick={() => null} className='fas fa-times mt-2 ml-2'></span>
+            <span onClick={() => props.deleteCartItem(id)} className='fas fa-times mt-2 ml-2'></span>
             <div className='productCard cartCard' style={{ height: '100%'}}>
                 <div className='cardImg'>
                     <img src={props.product.image} alt=""/>

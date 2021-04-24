@@ -16,15 +16,19 @@ import {
         scroll.scrollToTop();
     },[])
 
+    useEffect(() => {},[props.cartItems])
+
     const items = ((props.cartItems !== null && props.cartItems !== undefined) || props.cartItems.length !== 0) 
     ?  (props.cartItems.map((product, index) => {
             return(
                 <div className='m-auto'  key={index}>
                     <div className='cartI'>
                         <CartItem
+                        cartItems={props.cartItems}
                         setSingPost={props.setSingPost}
                         setView={props.setView}
                         product={product}
+                        deleteCartItem={props.deleteCartItem}
                         />
                     </div>
                 </div>
