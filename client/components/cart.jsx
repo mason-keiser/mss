@@ -1,5 +1,5 @@
 import React from 'react'
-import ItemCard from './itemCard'
+import CartItem from './cartItem'
 import {
     Row,
     Col
@@ -21,7 +21,7 @@ import {
             return(
                 <div className='m-auto'  key={index}>
                     <div className='cartI'>
-                        <ItemCard
+                        <CartItem
                         setSingPost={props.setSingPost}
                         setView={props.setView}
                         product={product}
@@ -35,10 +35,10 @@ import {
 
     const prevItems = (props.cartItems.length === 0) 
         ? (
-            <h3 className='prevCart mb-4'>no items in cart!</h3>
+            <h3 className='prevCart mb-4'>No items in cart</h3>
         ) 
         :  (
-        <h3 className='prevCart mb-4'>There are {props.cartItems.length} item(s) in your cart</h3>
+            <h3 className='prevCart mb-4'>There are {props.cartItems.length} item(s) in your cart</h3>
         )
 
     return (

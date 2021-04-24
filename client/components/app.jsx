@@ -95,7 +95,7 @@ const App = () => {
                 if (!result) {
                     return null
                 } else {
-                    const newItems = cartItems.concat(result)
+                    const newItems = cartItems.concat(result).reverse()
                     setCartItems(newItems)
                     console.log(result)
                 }
@@ -119,7 +119,7 @@ const App = () => {
                 if (!result) {
                     return null
                 } else {
-                const newItems = cartItems.concat(result)
+                const newItems = cartItems.concat(result).reverse()
                    setCartItems(newItems)
                    setView({ name: 'cart', params: {}})
                 }

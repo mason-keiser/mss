@@ -324,7 +324,7 @@ input[type=text]:focus{
 
   .cartI {
       width: 30vw;
-      height: 50vh;
+      height: 100%;
       background: white;
       margin: 1rem;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -334,9 +334,32 @@ input[type=text]:focus{
     text-align: center;
   }
 
+  .incBtns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: red;
+    color: white;
+    width: 3vw;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;
+  }
+
+  .incBtns:hover {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+  }
+
+  .qtyView {
+    padding: 5px 15px;
+  }
+
 /* mobile devices */
 
 @media screen and (max-width: 470px) {
+    .incBtns {
+        width: 10vw;
+    }
+
     #selectQty {
         -webkit-appearance: none;
     }
@@ -382,7 +405,7 @@ input[type=text]:focus{
     }
 
     .cartI {
-        height: 50vh;
+        height: 100%;
         width: 85vw;
         background: white;
         margin: 1rem;
