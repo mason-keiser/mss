@@ -122,12 +122,11 @@ const App = () => {
                 if (!result) {
                     return null
                 } else {
-                   const newItems = getCartItems();
-                   console.log(newItems)
-                   if (!newItems) {
+                    
+                   if (cartItems.length === 1) {
                        setCartItems([])
                    } else {
-                       getCartItems()
+                       setView({ name: 'cart', params: {}})
                    }
                 }
             })
