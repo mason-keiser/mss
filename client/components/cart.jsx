@@ -62,7 +62,7 @@ import { useState } from 'react';
         :  (
             <div>
                 <h2 style={{textAlign: 'center'}}>Total: {`$${(priceState / 100).toFixed(2)}`}</h2>
-                <h4 className='prevCart mt-4'>There are {props.cartItems.length} item(s) in your cart</h4>
+                <h4 className='prevCart mt-4'>{props.cartItems.length} item(s) in cart</h4>
             </div>
         )
 
