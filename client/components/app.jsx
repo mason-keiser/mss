@@ -160,6 +160,14 @@ const App = () => {
             })
     }
 
+    const updateQty = (qtyObj) => {
+        fetch('/api/updQty', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(qtyObj)
+        })
+    }
+
     const searchItems = (keyWord) => {
         fetch('/api/searchProducts/' + keyWord, {
             method: 'GET',

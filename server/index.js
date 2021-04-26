@@ -179,6 +179,7 @@ app.delete('/api/deleteItem' , (req, res, next) => {
 app.put('/api/updQty', (req, res, next) => {
   const cartItemId = req.body.cartItemId;
   const newQty = req.body.qty;
+  const session = req.session.cartId;
   const sql = `
   UPDATE "cartItems"
   SET "quantity" = $1
@@ -186,12 +187,28 @@ app.put('/api/updQty', (req, res, next) => {
   RETURNING *
   `
 
+  const nSql = `
+  SELECT * FROM "cartItems"
+  WHERE "cartId" = $1
+  `
+
   db.query(sql, [newQty, cartItemId])
   .then(result => {
     if (!result.rows) {
       return res.status(200).json({ message: `NO return array` });
     } else {
-      return res.status(200).json(result.rows);
+      db.query(nSql, [result.rows[0].cartId])
+      .then(result => {
+        if (!result.rows[0]) {
+          return res.status(200).json({ message: `NO return array` });
+        } else {
+          return res.status(200).json(result.rows);
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(500).json({ error: 'An unexpected error occurred.' });
+      });
     }
   })
   .catch(err => {
