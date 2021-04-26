@@ -174,6 +174,32 @@ app.delete('/api/deleteItem' , (req, res, next) => {
   });
 })
 
+// API TO UPDATE ITEM QTY
+
+app.put('/api/updQty', (req, res, next) => {
+  const cartItemId = req.body.cartItemId;
+  const newQty = req.body.qty;
+  const sql = `
+  UPDATE "cartItems"
+  SET "quantity" = $1
+  WHERE "cartItemId" = $2
+  RETURNING *
+  `
+
+  db.query(sql, [newQty, cartItemId])
+  .then(result => {
+    if (!result.rows) {
+      return res.status(200).json({ message: `NO return array` });
+    } else {
+      return res.status(200).json(result.rows);
+    }
+  })
+  .catch(err => {
+    console.error(err);
+    res.status(500).json({ error: 'An unexpected error occurred.' });
+  });
+})
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });
