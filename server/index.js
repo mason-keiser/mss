@@ -189,6 +189,7 @@ app.put('/api/updQty', (req, res, next) => {
 
   const nSql = `
   SELECT * FROM "cartItems"
+  INNER JOIN "products" ON "cartItems".productid="products".productid
   WHERE "cartId" = $1
   `
 
@@ -202,6 +203,9 @@ app.put('/api/updQty', (req, res, next) => {
         if (!result.rows[0]) {
           return res.status(200).json({ message: `NO return array` });
         } else {
+          result.rows.forEach((i) => {
+            delete i.description
+          })
           return res.status(200).json(result.rows);
         }
       })

@@ -38,6 +38,7 @@ import { useState } from 'react';
                 <div className='m-auto'  key={index}>
                     <div className='cartI'>
                         <CartItem
+                        updateQty={props.updateQty}
                         priceState={priceState}
                         cartItems={props.cartItems}
                         setSingPost={props.setSingPost}

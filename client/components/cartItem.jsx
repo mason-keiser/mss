@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
@@ -12,6 +12,16 @@ const CartItem = (props) => {
     const setItemProd = () => {
         props.setSingPost(props.product)
         props.setView({ name: 'viewprod', params: {}})
+    }
+
+    const handleSubmit = (callback) => {
+        const obj = {
+            cartItemId: props.product.cartItemId,
+            qty: cartIqty
+        }
+        console.log(obj)
+
+        callback(obj)
     }
 
     const qtyHandler = (event) => {
@@ -51,7 +61,7 @@ const CartItem = (props) => {
                         <div className='qtyView'>{cartIqty}</div>
                         <div onClick={() => qtyHandler(event)} id='i' className='d-flex incBtns fas fa-plus'></div>
                     </div>
-                    <div className='updateBtn mr-3'>Update</div>
+                    <div className='updateBtn mr-3' onClick={() => handleSubmit(props.updateQty)}>Update</div>
                 </div>
                 <div className='ml-3 pb-3 mt-1'>
                     <h5 className='subtotal' name={props.product.cartItemId} id={subtotal}>Subtotal :</h5>

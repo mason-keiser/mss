@@ -166,6 +166,21 @@ const App = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(qtyObj)
         })
+        .then(response => {
+            if (response.status === 400 || response.status === 404) {
+                return null
+            } else {
+                return response.json();
+            }
+            })
+            .then(result => {
+                if (!result) {
+                    return null
+                } else {
+                    console.log(result)
+                    setCartItems(result)
+                }
+            })
     }
 
     const searchItems = (keyWord) => {
@@ -205,7 +220,7 @@ const App = () => {
                             : (view.name === 'viewprod')
                                 ? <ViewProd postToCart={postToCart} getCartItems={getCartItems} setView={setView} setSingPost={setSingPost} singPost={singPost}/>
                                 : (view.name === 'cart')
-                                    ? <Cart deleteCartItem={deleteCartItem} setSingPost={setSingPost} cartItems={cartItems} setView={setView}/>
+                                    ? <Cart updateQty={updateQty} deleteCartItem={deleteCartItem} setSingPost={setSingPost} cartItems={cartItems} setView={setView}/>
                                     : null
     return (
         <div>
