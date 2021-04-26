@@ -19,7 +19,9 @@ const CartItem = (props) => {
             cartItemId: props.product.cartItemId,
             qty: cartIqty
         }
-        console.log(obj)
+        if (!obj) {
+            return null
+        }
 
         callback(obj)
     }

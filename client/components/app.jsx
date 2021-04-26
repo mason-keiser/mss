@@ -11,6 +11,10 @@ import Surf from './surf';
 import Wetsuits from './wetsuits';
 import ViewProd from './singPost'
 import Cart from './cart'
+import {
+    Link,
+    animateScroll as scroll
+  } from 'react-scroll';
 
 
 const App = () => {
@@ -177,8 +181,10 @@ const App = () => {
                 if (!result) {
                     return null
                 } else {
-                    console.log(result)
-                    setCartItems(result)
+                    setCartItems(result.sort(function(a, b) {
+                        return b.cartItemId - a.cartItemId;
+                    }))
+                    scroll.scrollToTop();
                 }
             })
     }
