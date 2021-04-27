@@ -21,6 +21,16 @@ import { useState } from 'react';
         scroll.scrollToTop();
     },[])
 
+    const sendEmail = () => {
+        fetch('/api/send', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                email: email
+            })
+          })
+    }
+
     const handleSubmit = (callback) => {
         const obj = {
             email: email,
@@ -36,6 +46,7 @@ import { useState } from 'react';
         } if (!obj.address) {
             document.getElementById('a').style.border = '1px solid red'
         } else {
+            sendEmail()
             callback(obj)
         }
     }

@@ -45,7 +45,7 @@ app.post('/api/send', (req, res, next) => {
 
   const mailOptions = {
     from: '"Mas Surf Shop" <zachariah.harvey54@ethereal.email>',
-    to: "masonksr5@gmail.com",
+    to: req.body.email,
     subject: "Thanks for Your Order!",
     text: "Hello world?",
     html: output,

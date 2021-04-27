@@ -193,7 +193,8 @@ const App = () => {
                 if (!result) {
                     return null
                 } else {
-                   setView({ name: 'home', params: {}})
+                    console.log(result)
+                 
                    setCartItems([])
                 }
             })
