@@ -71,7 +71,10 @@ import { useState } from 'react';
         if (!priceState) {
             return null
         } else  {
-            props.setView({ name: 'checkout', params: {price: `$${(priceState / 100).toFixed(2)}`}})
+            props.setView({ name: 'checkout', params: {
+                price: `$${(priceState / 100).toFixed(2)}`,
+                cart: props.cartItems
+            }})
         }
     }
 

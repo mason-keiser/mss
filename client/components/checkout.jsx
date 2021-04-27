@@ -26,7 +26,9 @@ import { useState } from 'react';
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                email: email
+                email: email,
+                total: props.view.params.price,
+                cart: props.view.params.cart
             })
           })
           .then(() => {
@@ -41,7 +43,6 @@ import { useState } from 'react';
             creditcard: card,
             address: addy
         }
-        console.log(obj)
 
         if (!obj.email) {
             document.getElementById('e').style.border = ' 1px solid red'
