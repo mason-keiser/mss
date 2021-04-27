@@ -26,17 +26,17 @@ app.get('/api/health-check', (req, res, next) => {
 app.post('/api/send', (req, res, next) => {
   const orderId = Math.floor(1000 + Math.random() * 9000)
   const items = req.body.cart
-  
+
   const output = `
   <h2>Order Number #${orderId} </h2>
   <h3>Total: ${req.body.total}</h3>
 
   <h4>Mas' Surf Shop sincerely thanks you for viewing our page and interacting with the site. This was an example eCommerce full stack React application therefore, no purchases have been made and no payment processing will be done.</h4>
 
-  <h4>If you would like to view more of Mason's projects please visit portfolio website at:</h4>
+  <h4>If you would like to view more of my projects please visit my portfolio website at:</h4>
   <h4>https://masonkeiser.com</h4>
   <div>
-    <h3>Thank You For Placing An Order With Us,</h3>
+    <h3>Thank You For Placing An Order,</h3>
     <h2>Mas' Surf Shop</h2>
   </div>
   `
