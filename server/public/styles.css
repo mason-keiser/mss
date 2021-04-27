@@ -783,6 +783,21 @@ input[type=text]:focus{
 }
 
 @media screen and (orientation: landscape) and (max-height: 330px) {
+    .carousel-caption > h1{
+        font-size: 2rem;
+    }
+    .carousel-caption > p{
+        font-size: 1rem;
+    }
+
+    .c2 {
+        top: 50%
+    }
+
+    .c3 {
+        top: 30%;
+    }
+
     .wrapper .input-data {
         height: 13vh;
     }
