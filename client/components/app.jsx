@@ -15,6 +15,7 @@ import {
     Link,
     animateScroll as scroll
   } from 'react-scroll';
+import CheckOut from './checkout';
 
 
 const App = () => {
@@ -227,7 +228,9 @@ const App = () => {
                                 ? <ViewProd postToCart={postToCart} getCartItems={getCartItems} setView={setView} setSingPost={setSingPost} singPost={singPost}/>
                                 : (view.name === 'cart')
                                     ? <Cart updateQty={updateQty} deleteCartItem={deleteCartItem} setSingPost={setSingPost} cartItems={cartItems} setView={setView}/>
-                                    : null
+                                    : (view.name === 'checkout')
+                                        ? <CheckOut setView={setView} view={view}/>
+                                        : null
     return (
         <div>
             <Nav cartItems={cartItems} searchItems={searchItems} setView={setView}/>

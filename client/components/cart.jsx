@@ -76,7 +76,7 @@ import { useState } from 'react';
                 {prevItems}
                 {items}
             </div>
-            <div className='toTop' onClick={() => null}>
+            <div className='toTop' onClick={() => props.setView({ name: 'checkout', params: {price: `$${(priceState / 100).toFixed(2)}`}})}>
                 <div className='fas fa-shopping-cart' style={{color: 'white'}}></div>    
             </div> 
         </div>
