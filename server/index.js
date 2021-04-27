@@ -1,5 +1,7 @@
 require('dotenv/config');
 const express = require('express');
+const exphbs = require('express-handlebars')
+const nodemailer = require('nodemailer')
 
 const db = require('./database');
 const ClientError = require('./client-error');
@@ -18,6 +20,51 @@ app.get('/api/health-check', (req, res, next) => {
     .then(result => res.json(result.rows[0]))
     .catch(err => next(err));
 });
+
+// API TO SEND EMAIL TO USER
+
+app.post('/api/send', (req, res, next) => {
+  const output = `
+  <p>Thank You For Placing An Order With Us</p>
+  <h3>Order Details</h3>
+  <h6>Order Number #69420 </h6>
+  <ul>
+    <li>Email: ${req.body.email}</li>
+    <li>Address: ${req.body.address}</li>
+  </ul>
+  `
+
+  let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'massurfshop@gmail.com',
+      pass: 'Masonsurfs'
+    },
+  
+  });
+
+  const mailOptions = {
+    from: '"Mas Surf Shop" <zachariah.harvey54@ethereal.email>',
+    to: "masonksr5@gmail.com",
+    subject: "Thanks for Your Order!",
+    text: "Hello world?",
+    html: output,
+  }
+
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, (error) => {
+    if (error) {
+      console.log(error)
+    } else {
+      console.log('email sent' + info.response)
+    }
+  });
+
+  
+  console.log("Message sent: %s", info);
+  // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+
+})
 
 //API TO GET ALL PRODUCTS
 

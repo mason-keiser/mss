@@ -27,6 +27,7 @@ import { useState } from 'react';
             creditcard: card,
             address: addy
         }
+        console.log(obj)
 
         if (!obj.email) {
             document.getElementById('e').style.border = ' 1px solid red'
