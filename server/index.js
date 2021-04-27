@@ -32,6 +32,9 @@ app.post('/api/send', (req, res, next) => {
     <li>Email: ${req.body.email}</li>
     <li>Address: ${req.body.address}</li>
   </ul>
+  <div>
+    <h2>Mas' Surf Shop</h2>
+  </div>
   `
 
   let transporter = nodemailer.createTransport({
