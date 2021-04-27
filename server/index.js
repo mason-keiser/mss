@@ -24,10 +24,12 @@ app.get('/api/health-check', (req, res, next) => {
 // API TO SEND EMAIL TO USER
 
 app.post('/api/send', (req, res, next) => {
+  const orderId = Math.random() * 5
+
   const output = `
   <p>Thank You For Placing An Order With Us</p>
   <h3>Order Details</h3>
-  <h6>Order Number #69420 </h6>
+  <h3>Order Number #${orderId} </h3>
   <ul>
     <li>Email: ${req.body.email}</li>
     <li>Address: ${req.body.address}</li>
@@ -40,8 +42,8 @@ app.post('/api/send', (req, res, next) => {
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'massurfshop@gmail.com',
-      pass: 'Masonsurfs'
+      user: 'masonssurfshop@gmail.com',
+      pass: '63Rdbase18!'
     },
   
   });
@@ -59,12 +61,12 @@ app.post('/api/send', (req, res, next) => {
     if (error) {
       console.log(error)
     } else {
-      console.log('email sent' + info.response)
+      console.log('email sent')
     }
   });
 
   
-  console.log("Message sent: %s", info);
+  console.log("Message sent: %s");
   // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
 
 })
