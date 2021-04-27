@@ -412,12 +412,6 @@ input[type=text]:focus{
     margin: 1rem;
   }
 
-  .input-data input:focus ~ label{
-    transform: translateY(-20px);
-    background: white;
-    color: red;
-  }
-
   .wrapper .input-data label {
     position: absolute;
     bottom: 2px;
@@ -425,6 +419,15 @@ input[type=text]:focus{
     color: grey;
     pointer-events: none;
     transition: all 0.3s ease;
+    font-size: 1rem;
+  }
+
+
+  .input-data input:focus ~ label{
+    transform: translateY(-20px);
+    background: white;
+    color: red;
+    font-size: 0.3rem;
   }
 
   .wrapper .input-data textarea {
