@@ -159,7 +159,7 @@ app.delete('/api/deleteItem' , (req, res, next) => {
   WHERE "cartItemId" = $1
   RETURNING *
   `
-  
+
   db.query(sql, [cartItemId])
   .then(result => {
     if (!result.rows[0]) {
@@ -219,6 +219,27 @@ app.put('/api/updQty', (req, res, next) => {
     console.error(err);
     res.status(500).json({ error: 'An unexpected error occurred.' });
   });
+})
+
+// API TO POST ORDER
+
+app.post('/api/orders', (req, res, next) => {
+  if(!req.session.cartId) {
+    throw new ClientError("there isn't a cart connected to this order", 400)
+  } else {
+    const sql = `
+    INSERT INTO "orders" ("cartId", "email", "creditcard", "address")
+    VALUES      ($1, $2, $3, $4)
+    RETURNING   "creditcard", "email", "address", "orderId", "createdAt"
+    `
+    const params = [req.session.cartId, req.body.email, req.body.creditcard, req.body.address];
+    return db.query(sql, params)
+      .then(result => {
+        res.status(201).json(result.rows[0]);
+        delete req.session.cartId   
+      })
+      .catch(err => next(err))
+  }
 })
 
 app.use('/api', (req, res, next) => {

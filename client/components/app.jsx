@@ -165,6 +165,28 @@ const App = () => {
             })
     }
 
+    const placeOrder = (orderInfo) => {
+        fetch('/api/orders', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(orderInfo)
+          })
+          .then(response => {
+            if (response.status === 400 || response.status === 404) {
+                return null
+            } else {
+                return response.json();
+            }
+            })
+            .then(result => {
+                if (!result) {
+                    return null
+                } else {
+                   setView({ name: 'home', params: {}})
+                }
+            })
+    }
+
     const updateQty = (qtyObj) => {
         fetch('/api/updQty', {
             method: 'PUT',
@@ -229,7 +251,7 @@ const App = () => {
                                 : (view.name === 'cart')
                                     ? <Cart updateQty={updateQty} deleteCartItem={deleteCartItem} setSingPost={setSingPost} cartItems={cartItems} setView={setView}/>
                                     : (view.name === 'checkout')
-                                        ? <CheckOut setView={setView} view={view}/>
+                                        ? <CheckOut placeOrder={placeOrder} setView={setView} view={view}/>
                                         : null
     return (
         <div>
