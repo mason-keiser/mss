@@ -36,7 +36,6 @@ app.post('/api/send', (req, res, next) => {
   <h4>If you would like to view more of my projects please visit my portfolio website at:</h4>
   <h4>https://masonkeiser.com</h4>
   <div>
-    <h3>Thank You For Placing An Order,</h3>
     <h2>Mas' Surf Shop</h2>
   </div>
   `
@@ -51,10 +50,10 @@ app.post('/api/send', (req, res, next) => {
   });
 
   const mailOptions = {
-    from: '"Mas Surf Shop" <zachariah.harvey54@ethereal.email>',
+    from: "Mas Surf Shop",
     to: req.body.email,
     subject: "Thanks for Your Order!",
-    text: "Hello world?",
+    text: `#${orderId}`,
     html: output,
   }
 
