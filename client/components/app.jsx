@@ -229,6 +229,7 @@ const App = () => {
                     return null
                 } else {
                     setSearchedItems(result)
+                    setCartItems([])
                     setView({ name: 'search', params: {}})
                 }
             })

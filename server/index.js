@@ -232,11 +232,27 @@ app.post('/api/orders', (req, res, next) => {
     VALUES      ($1, $2, $3, $4)
     RETURNING   "creditcard", "email", "address", "orderId", "createdAt"
     `
+
+    const delSQL = `
+    DELETE FROM "cartItems"
+    WHERE "cartId" = $1
+    `
     const params = [req.session.cartId, req.body.email, req.body.creditcard, req.body.address];
     return db.query(sql, params)
       .then(result => {
-        res.status(201).json(result.rows[0]);
-        delete req.session.cartId   
+        res.status(201).json(result.rows[0]); 
+        db.query(delSQL, [req.session.cartId])
+        .then(result => {
+          if (!result.rows) {
+            return res.status(200).json({ message: `NO return array` });
+          } else {
+            return res.status(200).json(result.rows[0]);
+          }
+        })
+        .catch(err => {
+          console.error(err);
+          res.status(500).json({ error: 'An unexpected error occurred.' });
+        });
       })
       .catch(err => next(err))
   }
