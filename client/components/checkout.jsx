@@ -29,9 +29,13 @@ import { useState } from 'react';
                 email: email
             })
           })
+          .then(() => {
+            props.setView({name: 'home', params: {}})
+          })
     }
 
     const handleSubmit = (callback) => {
+        event.preventDefault()
         const obj = {
             email: email,
             creditcard: card,
@@ -47,6 +51,7 @@ import { useState } from 'react';
             document.getElementById('a').style.border = '1px solid red'
         } else {
             sendEmail()
+
             callback(obj)
         }
     }
