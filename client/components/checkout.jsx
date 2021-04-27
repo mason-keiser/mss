@@ -18,7 +18,7 @@ import Footer from './footer';
     },[])
 
     return (
-        <div className='container' style={{height: '80vh'}}>
+        <div className='container2' >
             <div className='pageTitle'>
                 <h1>Checkout</h1>
             </div>

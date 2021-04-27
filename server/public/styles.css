@@ -477,6 +477,10 @@ input[type=text]:focus{
     margin-top: 1rem;
   }
 
+  .container2 {
+    height: 80vh;
+  }
+
   .orderBtn:hover {
     box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
   }
@@ -612,11 +616,22 @@ input[type=text]:focus{
 /* SE and smaller */
 
 @media screen and (max-width: 330px) {
+    .wrapper .input-data {
+        height: 6vh;
+      }
+
+    .container2 {
+        height: 110vh;
+    }
+
     .singPost {
         height: 55vh;
     }
     .cartI {
-        height: 55vh;
+        height: 85vh;
+        margin: 0;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
     .carousel-caption {
         top: 20%;
