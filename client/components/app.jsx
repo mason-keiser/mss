@@ -194,6 +194,7 @@ const App = () => {
                     return null
                 } else {
                    setView({ name: 'home', params: {}})
+                   setCartItems([])
                 }
             })
     }
@@ -240,7 +241,6 @@ const App = () => {
                     return null
                 } else {
                     setSearchedItems(result)
-                    setCartItems([])
                     setView({ name: 'search', params: {}})
                 }
             })
