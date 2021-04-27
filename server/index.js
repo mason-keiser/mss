@@ -27,14 +27,13 @@ app.post('/api/send', (req, res, next) => {
   const orderId = Math.floor(1000 + Math.random() * 9000)
 
   const output = `
-  <p>Thank You For Placing An Order With Us</p>
-  <h3>Order Details</h3>
   <h3>Order Number #${orderId} </h3>
   <ul>
     <li>Email: ${req.body.email}</li>
     <li>Address: ${req.body.address}</li>
   </ul>
   <div>
+    <p>Thank You For Placing An Order With Us</p>
     <h2>Mas' Surf Shop</h2>
   </div>
   `
