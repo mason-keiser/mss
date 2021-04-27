@@ -229,6 +229,11 @@ ALTER TABLE ONLY public.products ALTER COLUMN productid SET DEFAULT nextval('pub
 --
 
 COPY public."cartItems" ("cartItemId", "cartId", productid, price, quantity) FROM stdin;
+122	6	23	28000	1
+123	6	3	60000	9
+124	7	1	75000	1
+125	6	25	7000	1
+126	6	25	7000	1
 103	4	8	500	2
 104	4	16	22000	1
 105	4	20	88000	1
@@ -295,7 +300,7 @@ COPY public.products (productid, itemtype, name, price, image, description) FROM
 -- Name: cartItems_cartItemId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 118, true);
+SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 126, true);
 
 
 --
