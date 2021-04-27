@@ -24,7 +24,7 @@ app.get('/api/health-check', (req, res, next) => {
 // API TO SEND EMAIL TO USER
 
 app.post('/api/send', (req, res, next) => {
-  const orderId = Math.random() * 5
+  const orderId = Math.floor(1000 + Math.random() * 9000)
 
   const output = `
   <p>Thank You For Placing An Order With Us</p>
