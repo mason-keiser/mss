@@ -1,6 +1,5 @@
 require('dotenv/config');
 const express = require('express');
-const exphbs = require('express-handlebars')
 const nodemailer = require('nodemailer')
 
 const db = require('./database');
@@ -25,13 +24,12 @@ app.get('/api/health-check', (req, res, next) => {
 
 app.post('/api/send', (req, res, next) => {
   const orderId = Math.floor(1000 + Math.random() * 9000)
-  const items = req.body.cart
 
   const output = `
   <h2>Order Number #${orderId} </h2>
   <h3>Total: ${req.body.total}</h3>
 
-  <h4>Mas' Surf Shop sincerely thanks you for viewing our page and interacting with the site. This was an example eCommerce full stack React application therefore, no purchases have been made and no payment processing will be done.</h4>
+  <h4>Mas' Surf Shop wants to sincerely thanks you for viewing our page and interacting with the site. This was an example eCommerce full stack React application; therefore, no purchases have been made and no payment processing will be done.</h4>
 
   <h4>If you would like to view more of my projects please visit my portfolio website at:</h4>
   <h4>https://masonkeiser.com</h4>
@@ -45,8 +43,7 @@ app.post('/api/send', (req, res, next) => {
     auth: {
       user: 'masonssurfshop',
       pass: '63Rdbase18!'
-    },
-  
+    }
   });
 
   const mailOptions = {
@@ -57,7 +54,6 @@ app.post('/api/send', (req, res, next) => {
     html: output,
   }
 
-  // send mail with defined transport object
   transporter.sendMail(mailOptions, (error) => {
     if (error) {
       console.log(error)
@@ -66,10 +62,7 @@ app.post('/api/send', (req, res, next) => {
     }
   });
 
-  
-  console.log("Message sent: %s");
-  // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-
+  console.log("Message sending ...");
 })
 
 //API TO GET ALL PRODUCTS

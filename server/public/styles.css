@@ -555,6 +555,11 @@ input[type=checkbox]:checked:after {
     padding: 10px 5px;
     text-align: center;
   }
+
+  input:-internal-autofill-selected {
+      -webkit-appearance: none;
+      background-color: white;
+  }
 /* mobile devices */
 
 @media screen and (max-width: 470px) {
