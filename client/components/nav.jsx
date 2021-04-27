@@ -9,7 +9,7 @@ const Nav = (props) => {
         if (!searchWord) {
             bar.value = ''
             bar.style.border = '1px solid red'
-            bar.placeholder = 'no search word entered'
+            bar.placeholder = 'no search term entered'
             return null
         } else if (searchWord.length < 3) {
             bar.value = ''
@@ -17,6 +17,7 @@ const Nav = (props) => {
             bar.placeholder = 'enter min 3 characters'
             return null
         }
+        bar.style.background='white'
         bar.style.border = 'none'
         callback(searchWord)
     }
