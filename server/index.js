@@ -29,7 +29,7 @@ app.post('/api/send', (req, res, next) => {
   <h2>Order Number #${orderId} </h2>
   <h3>Total: ${req.body.total}</h3>
 
-  <h4>Mas' Surf Shop wants to sincerely thanks you for viewing our page and interacting with the site. This was an example eCommerce full stack React application; therefore, no purchases have been made and no payment processing will be done.</h4>
+  <h4>Mas' Surf Shop wants to sincerely thanks you for viewing our page and interacting with the site. This is an example eCommerce full stack React application; therefore, no purchases have been made and no payment processing will be done.</h4>
 
   <h4>If you would like to view more of my projects please visit my portfolio website at:</h4>
   <h4>https://masonkeiser.com</h4>
