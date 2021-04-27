@@ -446,9 +446,17 @@ input[type=text]:focus{
     box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;;
   }
 
+  input[type=checkbox]:checked{
+      background: red;
+      cursor: pointer;
+  }
+
+  input[type=checkbox] {
+      cursor: pointer;
+  }
 
   .fcontainer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     background: white;
@@ -456,9 +464,28 @@ input[type=text]:focus{
     padding: 0.5rem;
   }
 
+  .orderBtn {
+    padding: 5px;
+    background: red;
+    border: none;
+    color: white;
+    width: 10vw;
+    text-align: center;
+    font-size: large;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;
+    margin-top: 1rem;
+  }
+
+  .orderBtn:hover {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+  }
 /* mobile devices */
 
 @media screen and (max-width: 470px) {
+    .orderBtn{
+        width: 30vw;
+    }
+
     .input-data {
         box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;;
     }
