@@ -65,6 +65,25 @@ body, * {
     width: 60px;
 }
 
+.logoIcon2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px 0px 0px;
+    cursor: pointer;
+}
+
+.logoIcon2 > h2 {
+    font-weight: bolder;
+    margin-top: 1rem;
+    padding-left: 5px;
+}
+
+.logoIcon2 > img {
+    width: 60px;
+}
+
 .topRow {
     display: flex;
     flex-direction: row;
@@ -376,9 +395,81 @@ input[type=text]:focus{
     opacity: 80%;
   }
 
+  .wrapper {
+    width: 450px;
+    padding: 5px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wrapper .input-data {
+    height: 5vh;
+    width: 100%;
+    position: relative;
+    margin: 1rem;
+  }
+
+  .input-data input:focus ~ label{
+    transform: translateY(-20px);
+    background: white;
+    color: red;
+  }
+
+  .wrapper .input-data label {
+    position: absolute;
+    bottom: 2px;
+    left: 5px;
+    color: grey;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  .wrapper .input-data textarea {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;;
+    outline: none;
+    border: none;
+  }
+
+  .input-data textarea:focus ~ label{
+    transform: translateY(-20px);
+    background: white;
+    color: red;
+  }
+
+  .input-data textarea:focus {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;;
+  }
+
+
+  .fcontainer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: white;
+    width: 100vw;
+    padding: 0.5rem;
+  }
+
 /* mobile devices */
 
 @media screen and (max-width: 470px) {
+    .input-data {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;;
+    }
+
+    .input-data textarea:focus {
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;;
+      }
+
+    .wrapper {
+        width: 300px;
+    }
 
     .updateBtn {
         width: 20vw;
@@ -456,6 +547,10 @@ input[type=text]:focus{
 
     .logoIcon > h2 {
         display: none;
+    }
+
+    .logoIcon2 > img {
+        width: 45px;
     }
 
     .searchInput > input {
