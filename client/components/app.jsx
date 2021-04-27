@@ -27,6 +27,17 @@ const App = () => {
     const [searchedItems, setSearchedItems] = useState('search items')
     const [singPost, setSingPost] = useState('singular post');
     const [cartItems, setCartItems] = useState([])
+    const [entranceModal, setEntranceModal] = useState(true)
+
+    const modalTerp = (entranceModal == true) ? (
+        <div className='modall'>
+            <h3>Welcome to Mas' Surf Shop</h3>
+            <p>Mas’s Surf Shop is a full stack eCommerce shopping app that was created strictly for demonstration purposes. By clicking the button below, you accept that no purchases will be made, no payment processing will be done, and that actual personal information should not be used in checkout; such as, real names, addresses, or credit card information</p>
+            <div>
+                <button onClick={() => setEntranceModal(false)} className='orderBtn'>I accept</button>
+            </div>
+        </div>
+    ): null
 
     useEffect(() => {},[cartItems])
 
@@ -255,7 +266,8 @@ const App = () => {
                                         ? <CheckOut placeOrder={placeOrder} setView={setView} view={view}/>
                                         : null
     return (
-        <div>
+        <div className='b'>
+            {modalTerp}
             <Nav cartItems={cartItems} searchItems={searchItems} setView={setView}/>
             {viewTern}
         </div>

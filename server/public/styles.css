@@ -484,9 +484,57 @@ input[type=text]:focus{
   .orderBtn:hover {
     box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
   }
+
+  .modall ~ .carousel {
+    opacity: 40%;
+  }
+
+  .modall {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 40vw;
+    position: absolute;
+    left: 41%;
+    top: 60%; 
+    margin-left: -150px;
+    margin-top: -150px;
+    background: white;
+    z-index: 1000;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;
+  }
+
+  .modall:hover {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+  }
+
+  .modall > h3 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+  }
+
+  .modall > div > button {
+      margin-top: 0;
+  }
+
+  .modall > p {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10px 5px;
+    text-align: center;
+  }
 /* mobile devices */
 
 @media screen and (max-width: 470px) {
+    .modall {
+        top: 50%;
+        width: 80vw;
+        left: 46%;
+    }
+
     .orderBtn{
         width: 30vw;
     }
@@ -731,5 +779,54 @@ input[type=text]:focus{
     .cardImg {
         height: 20vh;
         margin-bottom: 1rem;
+    }
+}
+
+@media screen and (orientation: landscape) and (max-height: 330px) {
+    .wrapper .input-data {
+        height: 13vh;
+    }
+
+    .fcontainer {
+        display: none;
+    }
+    .modall {
+        width: 75vw;
+    }
+
+    #d {
+        width: 5vw;    
+    }
+
+    #i {
+        width: 5vw;
+    }
+
+    .singPost {
+        width: 75vw;
+        height: 75vh;
+    }
+
+    .cartI {
+        width: 60vw;
+    }
+
+    .orderBtn {
+        width: 30vw;
+    }
+
+    .navbarCont {
+        height: 40vh;
+    }
+
+    .btnRow > .quantityBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20vw;
+    }
+
+    .btnRow > .addToCart {
+        width: 20vw;
     }
 }
