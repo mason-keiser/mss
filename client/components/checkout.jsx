@@ -29,15 +29,15 @@ import Footer from './footer';
             <form action="">
                 <div className='wrapper mt-3'>
                     <div className='input-data'>
-                        <textarea style={{resize: 'none'}}  name="" id="" cols="30" rows="10"></textarea>
+                        <textarea required style={{resize: 'none'}}  name="" id="" cols="30" rows="10"></textarea>
                         <label htmlFor="">Email</label>
                     </div>
                     <div className='input-data'>
-                        <textarea style={{resize: 'none'}}  name="" id="" cols="30" rows="10"></textarea>
+                        <textarea required style={{resize: 'none'}}  name="" id="" cols="30" rows="10"></textarea>
                         <label htmlFor="">Credit Card</label>
                     </div>
                     <div className='input-data' id=''>
-                        <textarea style={{resize: 'none'}} name="" id="addy" cols="30" rows="10"></textarea>
+                        <textarea required style={{resize: 'none'}} name="" id="addy" cols="30" rows="10"></textarea>
                         <label htmlFor="">Address</label>
                     </div>
                     <div className=''>
