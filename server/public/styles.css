@@ -526,7 +526,7 @@ input[type=checkbox]:checked:after {
     padding-top: 1rem;
     padding-bottom: 1rem;
     width: 40vw;
-    position: absolute;
+    position: fixed;
     left: 41%;
     top: 60%; 
     margin-left: -150px;
@@ -820,7 +820,95 @@ input[type=checkbox]:checked:after {
     }
 }
 
+@media screen and (orientation: landscape) and (max-height:440px) {
+    .fcontainer {
+        display: none;
+    }
+    .wrapper .input-data label{
+        left: 15px;
+    }
+    .cartI {
+        width: 45vw;
+    }
+    .singPost {
+        width: 50vw;
+        height: 65vh;
+    }
+
+    .modall {
+        left: 50%;
+        width: 45vw
+    }
+    .navbarCont{
+        height: 30vh;
+    }
+
+    .carousel-caption > h1{
+        font-size: 2rem;
+    }
+    .carousel-caption > p{
+        font-size: 1rem;
+    }
+    .c2 {
+        top: 50%
+    }
+
+    .c3 {
+        top: 30%;
+    }
+
+    .btnRow > .quantityBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20vw;
+    }
+
+    .btnRow > .addToCart {
+        width: 20vw;
+    }
+    #d {
+        width: 5vw;    
+    }
+
+    #i {
+        width: 5vw;
+    }
+    .wrapper .input-data {
+        height: 10vh;
+    }
+    .container2 {
+        height: 160vh;
+    }
+    .orderBtn{
+        width: 20vw;
+    }
+}
+
+@media screen and (orientation: landscape) and (max-height: 390px) and (min-width: 800px) {
+    .navbarCont{
+        height: 33vh;
+    }
+    .container2 {
+        height: 160vh;
+    }
+
+    .orderBtn{
+        width: 20vw;
+    }
+}
+
+
+@media screen and (orientation: landscape) and (min-width: 660px) and (max-width: 680px) {
+    .navbarCont {
+        height: 33vh;
+    }
+}
+
 @media screen and (orientation: landscape) and (max-height: 330px) {
+    .modall {
+        left: 40%;
+    }
     .carousel-caption > h1{
         font-size: 2rem;
     }
