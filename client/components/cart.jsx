@@ -13,6 +13,7 @@ import { useState } from 'react';
 
   const Cart = (props) => {
     const [priceState, setPrice] = useState('$0')
+    const [cartQty, setCartQty] = useState()
 
     useEffect(() => {
         scroll.scrollToTop();
@@ -21,6 +22,7 @@ import { useState } from 'react';
     useEffect(() => {
         const subtotals = document.querySelectorAll('.subtotal')
         let price = 0;
+        let qty = 0
         if (!props.cartItems) {
             setPrice('$0')
             return null
@@ -29,6 +31,10 @@ import { useState } from 'react';
                 price = price + (Number(subtotals[i].id))
             }
             setPrice(price)
+            for (let c = 0; c < props.cartItems.length; c++) {
+                qty = qty + props.cartItems[c].quantity
+            }
+            setCartQty(qty)
         }
     },[props.cartItems])
 
@@ -63,7 +69,7 @@ import { useState } from 'react';
         :  (
             <div>
                 <h2 style={{textAlign: 'center'}}>Total: {`$${(priceState / 100).toFixed(2)}`}</h2>
-                <h4 className='prevCart mt-4'>{props.cartItems.length} item(s) in cart</h4>
+                <h4 className='prevCart mt-4'>{cartQty} item(s) in cart</h4>
             </div>
         )
 
