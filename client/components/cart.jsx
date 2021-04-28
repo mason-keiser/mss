@@ -84,6 +84,10 @@ import { useState } from 'react';
         }
     }
 
+    const border = (!props.cartItems[0]) 
+    ? <h6 className='m-4 p-2' style={{ textAlign: 'center', borderBottom: '1px solid black'}}>add items to cart to be able to checkout</h6>
+    : <h6 className='m-4 p-2' style={{ textAlign: 'center', borderBottom: '1px solid black'}}>checkout by clicking cart button on bottom right</h6>
+
     return (
         <div className='container'>
             <div className='pageTitle'>
@@ -91,6 +95,7 @@ import { useState } from 'react';
             </div>
             <div className='d-flex flex-column'>
                 {prevItems}
+                {border}
                 {items}
             </div>
             <div className='toTop' onClick={() => checkout()}>

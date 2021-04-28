@@ -25,7 +25,7 @@ const App = () => {
     const [surfProducts, setSurfProducts] = useState('surf products');
     const [wetsuitProducts, setWetsuitProducts] = useState('wetsuit products')
     const [accessoryProducts, setAccessoryProducts] = useState('accessory products')
-    const [searchedItems, setSearchedItems] = useState('search items')
+    const [searchedItems, setSearchedItems] = useState()
     const [singPost, setSingPost] = useState('singular post');
     const [cartItems, setCartItems] = useState([]);
     const [entranceModal, setEntranceModal] = useState(true);
@@ -243,6 +243,7 @@ const App = () => {
                     return null
                 } else {
                     setSearchedItems(result)
+                    console.log(searchedItems)
                     setView({ name: 'search', params: {}})
                 }
             })

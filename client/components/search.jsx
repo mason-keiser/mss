@@ -17,7 +17,7 @@ import {
         scroll.scrollToTop();
     },[])
 
-    const items = (props.searchItems !== null && props.searchItems!== undefined) 
+    const items = (props.searchItems[0]) 
     ?  (props.searchItems.map((product, index) => {
             return(
                 <div className='m-auto'  key={index}>
@@ -32,17 +32,22 @@ import {
             );
         })
     )
-    : null
+    : <h3 style={{ textAlign: 'center'}}>No items fit that search term</h3>
+
+    const border = (!props.searchItems[0]) 
+    ? <h6 className='m-4 p-2' style={{ textAlign: 'center', borderTop: '1px solid black'}}>no search items available </h6>
+    : <h6 className='m-4 p-2' style={{ textAlign: 'center', borderTop: '1px solid black'}}>no other search results</h6>
+
 
     return (
         <div className='container'>
             <div className='pageTitle'>
                 <h1>Search Results</h1>
             </div>
-            <Row className='row-cols-lg-3'>
+            <Row className='row-cols-lg-3 m-0'>
                 {items}
             </Row>
-            <h5 className='m-4 p-2' style={{ textAlign: 'center', borderTop: '1px solid black'}}>no other results</h5>
+            {border}
             <div className='toTop' onClick={() => scroll.scrollToTop()}>
                 <div className='fas fa-chevron-up' style={{color: 'white'}}></div>    
             </div> 
