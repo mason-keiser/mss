@@ -850,6 +850,7 @@ input[type=checkbox]:checked:after {
 
     .modall {
         left: 50%;
+        top: 50%;
         width: 45vw
     }
     .navbarCont{
