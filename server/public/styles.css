@@ -1132,4 +1132,22 @@ input[type=checkbox]:checked:after {
     }
 }
 
+@media screen and (orientation: landscape) and (min-width: 1350px) and (min-height: 1000px) {
+    .input-data textarea:valid ~ label,
+    .input-data textarea:focus ~ label{
+        transform: translateY(-30px);
+    }
+    
+    .navbarCont {
+        height: 14vh;
+    }
+
+    .bottomRow > div {
+        font-size: 1.5rem;
+    }
+
+    .carousel-item > img {
+        height: 86vh;
+    }
+}
 
