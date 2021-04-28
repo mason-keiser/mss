@@ -19,6 +19,7 @@ import { useState } from 'react';
 
     useEffect(() => {
         scroll.scrollToTop();
+        props.setTotal(props.view.params.price)
     },[])
 
     const sendEmail = () => {
@@ -32,7 +33,7 @@ import { useState } from 'react';
             })
           })
           .then(() => {
-            props.setView({name: 'home', params: {}})
+            props.setView({name: 'checkoutsuccess', params: {}})
           })
     }
 

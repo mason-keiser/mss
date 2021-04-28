@@ -16,6 +16,7 @@ import {
     animateScroll as scroll
   } from 'react-scroll';
 import CheckOut from './checkout';
+import CheckoutSuccess from './checkoutSuccess';
 
 
 const App = () => {
@@ -26,8 +27,9 @@ const App = () => {
     const [accessoryProducts, setAccessoryProducts] = useState('accessory products')
     const [searchedItems, setSearchedItems] = useState('search items')
     const [singPost, setSingPost] = useState('singular post');
-    const [cartItems, setCartItems] = useState([])
-    const [entranceModal, setEntranceModal] = useState(true)
+    const [cartItems, setCartItems] = useState([]);
+    const [entranceModal, setEntranceModal] = useState(true);
+    const [total, setTotal] = useState();
 
     const modalTerp = (entranceModal == true) ? (
         <div className='modall'>
@@ -193,7 +195,7 @@ const App = () => {
                 if (!result) {
                     return null
                 } else {
-                    setView({ name: 'home', params: {}})
+                    setView({ name: 'checkoutsuccess', params: {}})
                    setCartItems([])
                 }
             })
@@ -263,8 +265,10 @@ const App = () => {
                                 : (view.name === 'cart')
                                     ? <Cart updateQty={updateQty} deleteCartItem={deleteCartItem} setSingPost={setSingPost} cartItems={cartItems} setView={setView}/>
                                     : (view.name === 'checkout')
-                                        ? <CheckOut placeOrder={placeOrder} setView={setView} view={view}/>
-                                        : null
+                                        ? <CheckOut setTotal={setTotal} placeOrder={placeOrder} setView={setView} view={view}/>
+                                        : (view.name === 'checkoutsuccess')
+                                            ? <CheckoutSuccess total={total} setTotal={setTotal} setView={setView} />
+                                            : null
     return (
         <div className='b'>
             {modalTerp}
