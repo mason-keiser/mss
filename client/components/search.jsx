@@ -42,6 +42,7 @@ import {
             <Row className='row-cols-lg-3'>
                 {items}
             </Row>
+            <h4 className='m-4 p-2' style={{ textAlign: 'center', borderTop: '1px solid black'}}>no other results</h4>
             <div className='toTop' onClick={() => scroll.scrollToTop()}>
                 <div className='fas fa-chevron-up' style={{color: 'white'}}></div>    
             </div> 
