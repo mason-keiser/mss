@@ -1000,4 +1000,58 @@ input[type=checkbox]:checked:after {
     }
 }
 
+@media screen and (orientation: portrait) and (min-height: 1000px) and (max-height: 1200px) {
+    .carousel-caption > h1{
+        font-size: 3rem;
+    }
+    .carousel-caption > p{
+        font-size: 1.5rem;
+    }
+
+    .c2 {
+        top: 50%
+    }
+
+    .c3 {
+        top: 30%;
+    }
+    .orderBtn {
+        width: 30vw;
+    }
+    .cartI {
+        width: 47vw;
+        height: 50vh;
+    }
+
+    .wrapper .input-data label{
+        left: 15px;
+    }
+
+    #d {
+        width: 5vw;    
+    }
+
+    #i {
+        width: 5vw;
+    }
+    .wrapper .input-data {
+        height: 4vh;
+    }
+
+    .modall {
+        left: 50%;
+        top: 55%;
+    }
+    .btnRow > .quantityBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20vw;
+    }
+
+    .btnRow > .addToCart {
+        width: 20vw;
+    }
+}
+
 
