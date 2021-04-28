@@ -758,6 +758,13 @@ input[type=checkbox]:checked:after {
 }
 
 @media screen and (orientation: portrait) and (min-height: 1000px) {
+    .input-data {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;;
+    }
+
+    .input-data textarea:focus {
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;;
+      }
     .singPost {
         width: 40vw;
         height: 35vh;
@@ -788,6 +795,13 @@ input[type=checkbox]:checked:after {
 }
 
 @media screen and (orientation: portrait) and (min-height: 1300px) {
+    .input-data {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;;
+    }
+
+    .input-data textarea:focus {
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;;
+      }
     .singPost {
         width: unset;
         height: 30vh;
@@ -1001,6 +1015,13 @@ input[type=checkbox]:checked:after {
 }
 
 @media screen and (orientation: portrait) and (min-height: 1000px) and (max-height: 1200px) {
+    .input-data {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;;
+    }
+
+    .input-data textarea:focus {
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;;
+      }
     .carousel-caption > h1{
         font-size: 3rem;
     }
@@ -1058,6 +1079,13 @@ input[type=checkbox]:checked:after {
 }
 
 @media screen and (orientation: portrait) and (min-height: 1300px){
+    .input-data {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;;
+    }
+
+    .input-data textarea:focus {
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;;
+      }
     .input-data textarea:valid ~ label,
     .input-data textarea:focus ~ label{
         transform: translateY(-30px);
@@ -1133,6 +1161,13 @@ input[type=checkbox]:checked:after {
 }
 
 @media screen and (orientation: landscape) and (min-width: 1350px) and (min-height: 1000px) {
+    .input-data {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;;
+    }
+
+    .input-data textarea:focus {
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;;
+      }
     .input-data textarea:valid ~ label,
     .input-data textarea:focus ~ label{
         transform: translateY(-30px);
