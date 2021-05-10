@@ -1,5 +1,5 @@
 # Mas' Surf Shop
-A full stack Node.js and React.js eCommerce app.
+A full-stack eCommerce application aimed to simulate an online shopping experience for a surf shop.
 
 * Link: https://mss.masonkeiser.com/
 # Technologies Used
