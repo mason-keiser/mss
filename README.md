@@ -62,4 +62,4 @@ pgweb --db=mss
 npm run dev
 ```
 # Preview
-![](server/public/images/ws.png)
+![](server/public/images/previewImg.png)
