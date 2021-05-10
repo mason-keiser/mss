@@ -1,7 +1,7 @@
 # Mas' Surf Shop
 A full stack Node.js and React.js eCommerce app.
 
-* Link: https://wicked-sales.masonkeiser.com/
+* Link: https://mss.masonkeiser.com/
 # Technologies Used
 * React.js
 * React Hooks
